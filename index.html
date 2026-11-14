@@ -365,46 +365,37 @@ nav.solid .lgo.l{display:block}
 .cat .ic *{stroke:var(--gold);fill:none;stroke-width:1.2}
 .cat h3{font-family:var(--serif);font-weight:400;font-size:24px;margin-top:26px;line-height:1.15}
 .cat p{font-size:13px;color:var(--mute);margin-top:6px}
-/* projects hero showcase */
-.pshowcase{display:flex;flex-direction:column;gap:18px}
-.ptabs{display:grid;grid-template-columns:repeat(5,minmax(175px,1fr));gap:10px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+/* projects full-screen hero banner */
+.proj-hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding:96px 0 56px;overflow:hidden;background:#0d1c15;color:#f7f2e7;isolation:isolate}
+.proj-hero .slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.12);transition:opacity 1.4s ease,transform 6.5s linear}
+.proj-hero .slides img.on{opacity:1;transform:scale(1)}
+.ptop{position:relative;z-index:3;width:min(1400px,100% - 32px);margin-inline:auto;padding-bottom:18px;border-bottom:1px solid rgba(242,185,82,.18)}
+@media(min-width:760px){.ptop{width:min(1400px,100% - 64px)}}
+.ptabs{display:flex;align-items:center;gap:8px;overflow-x:auto;scrollbar-width:none}
 .ptabs::-webkit-scrollbar{display:none}
-.ptab{position:relative;display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;text-align:left;cursor:pointer;overflow:hidden;transition:border-color .35s,background .35s,transform .35s,box-shadow .35s}
-.ptab:hover{border-color:var(--gold);transform:translateY(-2px)}
-.ptab.on{background:#0d1c15;color:#f7f2e7;border-color:rgba(242,185,82,.55);box-shadow:0 16px 34px -18px rgba(13,28,21,.45)}
-.ptab-logo{width:42px;height:42px;border-radius:50%;overflow:hidden;border:1.5px solid rgba(195,138,44,.45);background:#fff;flex:none;display:grid;place-items:center}
+.ptab{display:inline-flex;align-items:center;gap:10px;padding:7px 16px 7px 8px;border-radius:40px;background:rgba(13,28,21,.45);border:1px solid rgba(242,185,82,.22);color:rgba(247,242,231,.78);font:inherit;font-size:13px;letter-spacing:.02em;cursor:pointer;white-space:nowrap;backdrop-filter:blur(10px);transition:all .3s var(--ease)}
+.ptab:hover{color:#f7f2e7;border-color:rgba(242,185,82,.55);background:rgba(242,185,82,.14)}
+.ptab.on{background:rgba(242,185,82,.2);color:#f7f2e7;border-color:#f2b952;box-shadow:0 0 24px -6px rgba(242,185,82,.45)}
+.ptab-logo{width:30px;height:30px;border-radius:50%;overflow:hidden;border:1.5px solid rgba(242,185,82,.6);background:#fff;flex:none;display:block}
 .ptab.on .ptab-logo{border-color:#f2b952}
 .ptab-logo img{width:100%;height:100%;object-fit:cover;display:block}
-.ptab-tx{min-width:0;display:flex;flex-direction:column;gap:2px}
-.ptab-tx small{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ptab.on .ptab-tx small{color:#f2c46d}
-.ptab-tx b{font-family:var(--serif);font-weight:400;font-size:15px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ptab-bar{position:absolute;left:0;bottom:0;height:2.5px;width:0;background:linear-gradient(90deg,#a86f1f,#f2b952)}
-.ptab.on .ptab-bar{animation:pprog 5s linear forwards}
-@keyframes pprog{from{width:0}to{width:100%}}
-.phero{position:relative;border-radius:12px;overflow:hidden;min-height:clamp(430px,58vh,620px);background:#0d1c15;color:#f7f2e7;border:1px solid rgba(242,185,82,.28);box-shadow:0 36px 80px -34px rgba(13,28,21,.5);isolation:isolate}
-.pslide{position:absolute;inset:0;display:flex;align-items:flex-end;padding:clamp(26px,4.5vw,56px);opacity:0;visibility:hidden;transition:opacity .9s var(--ease),visibility .9s;z-index:1}
-.pslide.on{opacity:1;visibility:visible;z-index:2}
-.pslide-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transform:scale(1.08);transition:transform 6s linear}
-.pslide.on .pslide-bg{transform:scale(1)}
-.pslide-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(9,21,15,.94) 0%,rgba(9,21,15,.74) 44%,rgba(9,21,15,.18) 85%),linear-gradient(180deg,rgba(9,21,15,.25) 0%,transparent 35%,rgba(9,21,15,.92) 100%)}
-.pslide-in{width:100%;display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap}
-.pslide-main{max-width:700px;transform:translateY(18px);opacity:0;transition:transform .8s var(--ease) .1s,opacity .8s var(--ease) .1s}
-.pslide.on .pslide-main{transform:none;opacity:1}
-.pslide-head{display:flex;align-items:center;gap:16px;margin-bottom:18px}
-.pslide-logo{width:70px;height:70px;border-radius:50%;overflow:hidden;border:2px solid #f2b952;background:#fff;box-shadow:0 12px 30px rgba(0,0,0,.5);flex:none}
-.pslide-logo img{width:100%;height:100%;object-fit:cover;display:block}
-.pslide-eyebrow{display:flex;flex-direction:column;gap:4px}
-.pslide-eyebrow .pnum{font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:#f2c46d}
-.pslide-eyebrow .pcl{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#cfd6d0}
-.pslide-main h3{font-family:var(--serif);font-weight:200;font-size:clamp(30px,4.2vw,60px);line-height:1.04;letter-spacing:-.02em;margin:0 0 22px;color:#f7f2e7}
-.pslide-main h3 em{font-style:normal!important;font-weight:300;color:transparent;background:linear-gradient(100deg,#a86f1f,#f2c46d 40%,#e2a845 60%,#a86f1f);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;animation:sheen 6s linear infinite}
-.pslide-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.pslide-actions .btn svg{width:15px;height:15px;fill:currentColor}
-.pnav{position:absolute;right:clamp(20px,4vw,48px);bottom:clamp(22px,4vw,48px);z-index:4;display:flex;align-items:center;gap:10px}
-.pnav button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(242,185,82,.45);background:rgba(13,28,21,.72);color:#f7f2e7;font-size:16px;cursor:pointer;backdrop-filter:blur(8px);transition:background .3s,color .3s,border-color .3s}
-.pnav button:hover{background:#f2b952;color:#0d1c15;border-color:#f2b952}
-@media(max-width:720px){.pnav{top:18px;right:18px;bottom:auto}.pslide-logo{width:56px;height:56px}}
+.proj-body{position:relative;z-index:2;margin:auto 0;padding:36px 0}
+.proj-body .wrap>div:first-child{max-width:780px}
+.proj-pill{display:inline-flex;align-items:center;gap:12px;padding:7px 18px 7px 8px;border-radius:40px;font-size:12px;letter-spacing:.08em;color:#ffe2a3;background:rgba(13,28,21,.62);backdrop-filter:blur(8px);border:1px solid rgba(242,185,82,.65);transition:transform .3s,box-shadow .3s}
+.proj-pill:hover{transform:translateY(-2px);box-shadow:0 0 26px -4px rgba(242,185,82,.45)}
+.proj-pill img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:1.5px solid #f2b952;background:#fff}
+.proj-hero h2.ph-title{font-family:var(--serif);font-weight:200;font-size:clamp(40px,5.6vw,92px);line-height:1.02;letter-spacing:-.025em;margin:22px 0 24px;color:#f7f2e7;max-width:none}
+.proj-hero h2.ph-title .ln{display:block}
+.proj-hero h2.ph-title em{font-style:normal!important;font-weight:300;color:transparent;background:linear-gradient(100deg,var(--gold3),var(--gold2) 40%,var(--gold) 60%,var(--gold3));background-size:220% 100%;-webkit-background-clip:text;background-clip:text;animation:sheen 6s linear infinite}
+.proj-hero p.lead{max-width:540px;color:var(--mute);font-size:16px}
+.proj-hero .ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start;margin-top:30px}
+.proj-hero .ctas .btn:not(.solid){color:#f7f2e7}
+.proj-hero .ctas .btn svg{width:15px;height:15px;fill:currentColor}
+.proj-content{transition:opacity .38s ease,transform .38s ease}
+.proj-content.swapping{opacity:0;transform:translateY(12px)}
+.proj-foot{position:relative;z-index:2;width:min(1240px,100% - 32px);margin-inline:auto;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+@media(min-width:760px){.proj-foot{width:min(1240px,100% - 80px)}}
+#pdots i.on b{animation:prog 5s linear forwards}
 /* ===== v3 additions ===== */
 .hero .wrap{display:grid;gap:50px;align-items:end}
 @media(min-width:1080px){.hero .wrap{grid-template-columns:1.25fr 1fr}.badge{display:none!important}}
@@ -697,149 +688,68 @@ h1,h2,h3,h4,.quote,.stat b,.wm,.adv b{font-family:var(--serif)}
 </div></section>
 
 <!-- PROJECTS -->
-<section id="projects"><div class="wrap">
-  <div class="sh rv">
-    <div><div class="num">05 — <span class="mn">Төслүүд</span><span class="en">Projects</span></div>
-    <h2 style="margin-top:22px"><span class="mn">Хамтран <em>бүтээсэн</em> төслүүд.</span><span class="en">Projects we <em>build</em> with.</span></h2></div>
-    <p><span class="mn">Монголын тэргүүлэх барилгын компаниудтай хамтран гүйцэтгэсэн болон гүйцэтгэж буй төслүүд. Дээрх лого, нэр дээр дарж төслүүдийг сэлгэн үзнэ үү.</span><span class="en">Completed and ongoing projects with Mongolia's leading developers. Tap any project logo above to switch or visit its official Facebook page.</span></p>
+<section class="proj-hero dark" id="projects">
+  <div class="slides" id="pslides">
+    <img src="assets/img/projects/p1_cover.jpg" alt="Хүслийн төгөл хотхон" class="on">
+    <img src="assets/img/projects/p2_cover.jpg" alt="IVY Residence">
+    <img src="assets/img/projects/p3_cover.jpg" alt="Century Business Apartment">
+    <img src="assets/img/projects/p4_cover.jpg" alt="Хаппи Резидэнс хотхон">
+    <img src="assets/img/projects/p5_cover.jpg" alt="Очир Сити хотхон">
   </div>
-  <div class="pshowcase rv">
+  <div class="hshade"></div>
+
+  <div class="ptop">
     <div class="ptabs" id="ptabs">
-      <button class="ptab on" data-p="0">
-        <span class="ptab-logo"><img src="assets/img/projects/p1_logo.jpg" alt="Хүслийн төгөл"></span>
-        <span class="ptab-tx"><small>01 · <span class="mn">Монгол Угсаа</span><span class="en">Mongol Ugsaa</span></small><b><span class="mn">Хүслийн төгөл</span><span class="en">Khusliin Tugul</span></b></span>
-        <i class="ptab-bar"></i>
+      <button type="button" class="ptab on" data-p="0">
+        <span class="ptab-logo"><img src="assets/img/projects/p1_logo.jpg" alt=""></span>
+        <span><span class="mn">Хүслийн төгөл хотхон</span><span class="en">Khusliin Tugul</span></span>
       </button>
-      <button class="ptab" data-p="1">
-        <span class="ptab-logo"><img src="assets/img/projects/p2_logo.jpg" alt="IVY Residence"></span>
-        <span class="ptab-tx"><small>02 · <span class="mn">Азиан Сити</span><span class="en">Asian City</span></small><b><span class="mn">IVY Residence</span><span class="en">IVY Residence</span></b></span>
-        <i class="ptab-bar"></i>
+      <button type="button" class="ptab" data-p="1">
+        <span class="ptab-logo"><img src="assets/img/projects/p2_logo.jpg" alt=""></span>
+        <span><span class="mn">IVY Residence</span><span class="en">IVY Residence</span></span>
       </button>
-      <button class="ptab" data-p="2">
-        <span class="ptab-logo"><img src="assets/img/projects/p3_logo.jpg" alt="Century Apartment"></span>
-        <span class="ptab-tx"><small>03 · <span class="mn">УИД өргөтгөл</span><span class="en">UB Dept. Store</span></small><b><span class="mn">Century Apartment</span><span class="en">Century Apartment</span></b></span>
-        <i class="ptab-bar"></i>
+      <button type="button" class="ptab" data-p="2">
+        <span class="ptab-logo"><img src="assets/img/projects/p3_logo.jpg" alt=""></span>
+        <span><span class="mn">Century Apartment</span><span class="en">Century Apartment</span></span>
       </button>
-      <button class="ptab" data-p="3">
-        <span class="ptab-logo"><img src="assets/img/projects/p4_logo.jpg" alt="Хаппи Резидэнс"></span>
-        <span class="ptab-tx"><small>04 · <span class="mn">Нутгийн Буян</span><span class="en">Nutgiin Buyan</span></small><b><span class="mn">Хаппи Резидэнс</span><span class="en">Happy Residence</span></b></span>
-        <i class="ptab-bar"></i>
+      <button type="button" class="ptab" data-p="3">
+        <span class="ptab-logo"><img src="assets/img/projects/p4_logo.jpg" alt=""></span>
+        <span><span class="mn">Хаппи Резидэнс</span><span class="en">Happy Residence</span></span>
       </button>
-      <button class="ptab" data-p="4">
-        <span class="ptab-logo"><img src="assets/img/projects/p5_logo.jpg" alt="Очир Сити"></span>
-        <span class="ptab-tx"><small>05 · <span class="mn">Нутгийн Буян</span><span class="en">Nutgiin Buyan</span></small><b><span class="mn">Очир Сити</span><span class="en">Ochir City</span></b></span>
-        <i class="ptab-bar"></i>
+      <button type="button" class="ptab" data-p="4">
+        <span class="ptab-logo"><img src="assets/img/projects/p5_logo.jpg" alt=""></span>
+        <span><span class="mn">Очир Сити хотхон</span><span class="en">Ochir City</span></span>
       </button>
     </div>
+  </div>
 
-    <div class="phero dark" id="phero">
-      <div class="pslide on">
-        <img class="pslide-bg" src="assets/img/projects/p1_cover.jpg" alt="Хүслийн төгөл хотхон">
-        <div class="pslide-shade"></div>
-        <div class="pslide-in">
-          <div class="pslide-main">
-            <div class="pslide-head">
-              <div class="pslide-logo"><img src="assets/img/projects/p1_logo.jpg" alt="Хүслийн төгөл лого"></div>
-              <div class="pslide-eyebrow">
-                <span class="pnum">01 / 05 — <span class="mn">Хамтран бүтээсэн төсөл</span><span class="en">Partnered Project</span></span>
-                <span class="pcl"><span class="mn">Монгол Угсаа Констракшн ХХК</span><span class="en">Mongol Ugsaa Construction LLC</span></span>
-              </div>
-            </div>
-            <h3><span class="mn">Хүслийн төгөл <em>хотхон.</em></span><span class="en">Khusliin Tugul <em>Town.</em></span></h3>
-            <div class="pslide-actions">
-              <a href="https://www.facebook.com/share/1EdCbseKLP/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn solid"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h2V2h-3c-3 0-4 2-4 4v2H8v3h2v11h4V11h3l.5-3z"/></svg><span class="mn">Албан ёсны Facebook хуудас</span><span class="en">Official Facebook page</span><span class="ar">→</span></a>
-            </div>
-          </div>
+  <div class="proj-body">
+    <div class="wrap">
+      <div class="proj-content" id="pcontent">
+        <a href="https://www.facebook.com/share/1EdCbseKLP/?mibextid=wwXIfr" target="_blank" rel="noopener" class="proj-pill" id="ppill">
+          <img id="plogo" src="assets/img/projects/p1_logo.jpg" alt="">
+          <span id="pdev"><span class="mn">Монгол Угсаа Констракшн ХХК · Албан ёсны түнш</span><span class="en">Mongol Ugsaa Construction LLC · Official Partner</span></span>
+          <span class="ar">→</span>
+        </a>
+        <div class="eyebrow" style="margin-top:26px"><span class="mn">05 — Хамтран бүтээсэн төслүүд</span><span class="en">05 — Projects we build with</span></div>
+        <h2 class="ph-title" id="ptitle">
+          <span class="ln"><span class="mn">Хүслийн төгөл</span><span class="en">Khusliin Tugul</span></span>
+          <span class="ln"><span><em class="mn">хотхон.</em><em class="en">Town.</em></span></span>
+        </h2>
+        <p class="lead" id="plead"><span class="mn">Монголын тэргүүлэх барилгын компаниудтай хамтран гүйцэтгэсэн болон гүйцэтгэж буй томоохон орон сууц, цогцолбор хотхоны төслүүд.</span><span class="en">Completed and ongoing residential and mixed-use complex projects delivered in partnership with Mongolia's leading developers.</span></p>
+        <div class="ctas">
+          <a href="https://www.facebook.com/share/1EdCbseKLP/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn solid" id="pfb"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h2V2h-3c-3 0-4 2-4 4v2H8v3h2v11h4V11h3l.5-3z"/></svg><span class="mn">Facebook хуудас</span><span class="en">Facebook page</span><span class="ar">→</span></a>
+          <a href="#contact" class="btn"><span class="mn">Үнийн санал авах</span><span class="en">Request a quote</span></a>
         </div>
-      </div>
-
-      <div class="pslide">
-        <img class="pslide-bg" src="assets/img/projects/p2_cover.jpg" alt="IVY Residence — Нэхмэл дахин төлөвлөлт">
-        <div class="pslide-shade"></div>
-        <div class="pslide-in">
-          <div class="pslide-main">
-            <div class="pslide-head">
-              <div class="pslide-logo"><img src="assets/img/projects/p2_logo.jpg" alt="IVY Residence лого"></div>
-              <div class="pslide-eyebrow">
-                <span class="pnum">02 / 05 — <span class="mn">Хамтран бүтээсэн төсөл</span><span class="en">Partnered Project</span></span>
-                <span class="pcl"><span class="mn">Азиан Сити ХХК</span><span class="en">Asian City LLC</span></span>
-              </div>
-            </div>
-            <h3><span class="mn">Нэхмэл дахин төлөвлөлт — <em>IVY Residence.</em></span><span class="en">Nekhmel Redevelopment — <em>IVY Residence.</em></span></h3>
-            <div class="pslide-actions">
-              <a href="https://www.facebook.com/share/1d3TdkL6Ni/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn solid"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h2V2h-3c-3 0-4 2-4 4v2H8v3h2v11h4V11h3l.5-3z"/></svg><span class="mn">Албан ёсны Facebook хуудас</span><span class="en">Official Facebook page</span><span class="ar">→</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="pslide">
-        <img class="pslide-bg" src="assets/img/projects/p3_cover.jpg" alt="Century Business Apartment">
-        <div class="pslide-shade"></div>
-        <div class="pslide-in">
-          <div class="pslide-main">
-            <div class="pslide-head">
-              <div class="pslide-logo"><img src="assets/img/projects/p3_logo.jpg" alt="Century Business Apartment лого"></div>
-              <div class="pslide-eyebrow">
-                <span class="pnum">03 / 05 — <span class="mn">18 давхар үйлчилгээтэй орон сууц</span><span class="en">18-Storey Mixed-Use Residence</span></span>
-                <span class="pcl"><span class="mn">Улаанбаатар их дэлгүүр өргөтгөл</span><span class="en">Ulaanbaatar Department Store Extension</span></span>
-              </div>
-            </div>
-            <h3><span class="mn">УИД өргөтгөл — <em>Century Business Apartment.</em></span><span class="en">UB Dept. Store Extension — <em>Century Business Apartment.</em></span></h3>
-            <div class="pslide-actions">
-              <a href="https://www.facebook.com/share/1NThzq7M1x/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn solid"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h2V2h-3c-3 0-4 2-4 4v2H8v3h2v11h4V11h3l.5-3z"/></svg><span class="mn">Албан ёсны Facebook хуудас</span><span class="en">Official Facebook page</span><span class="ar">→</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="pslide">
-        <img class="pslide-bg" src="assets/img/projects/p4_cover.jpg" alt="Хаппи Резидэнс хотхон">
-        <div class="pslide-shade"></div>
-        <div class="pslide-in">
-          <div class="pslide-main">
-            <div class="pslide-head">
-              <div class="pslide-logo"><img src="assets/img/projects/p4_logo.jpg" alt="Хаппи Резидэнс лого"></div>
-              <div class="pslide-eyebrow">
-                <span class="pnum">04 / 05 — <span class="mn">Хамтран бүтээсэн төсөл</span><span class="en">Partnered Project</span></span>
-                <span class="pcl"><span class="mn">Нутгийн Буян Групп ХХК</span><span class="en">Nutgiin Buyan Group LLC</span></span>
-              </div>
-            </div>
-            <h3><span class="mn">Хаппи Резидэнс <em>хотхон.</em></span><span class="en">Happy Residence <em>Town.</em></span></h3>
-            <div class="pslide-actions">
-              <a href="https://www.facebook.com/share/1CiktJTDtt/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn solid"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h2V2h-3c-3 0-4 2-4 4v2H8v3h2v11h4V11h3l.5-3z"/></svg><span class="mn">Албан ёсны Facebook хуудас</span><span class="en">Official Facebook page</span><span class="ar">→</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="pslide">
-        <img class="pslide-bg" src="assets/img/projects/p5_cover.jpg" alt="Очир Сити хотхон">
-        <div class="pslide-shade"></div>
-        <div class="pslide-in">
-          <div class="pslide-main">
-            <div class="pslide-head">
-              <div class="pslide-logo"><img src="assets/img/projects/p5_logo.jpg" alt="Очир Сити лого"></div>
-              <div class="pslide-eyebrow">
-                <span class="pnum">05 / 05 — <span class="mn">Хамтран бүтээсэн төсөл</span><span class="en">Partnered Project</span></span>
-                <span class="pcl"><span class="mn">Нутгийн Буян Групп ХХК</span><span class="en">Nutgiin Buyan Group LLC</span></span>
-              </div>
-            </div>
-            <h3><span class="mn">Очир Сити <em>хотхон.</em></span><span class="en">Ochir City <em>Town.</em></span></h3>
-            <div class="pslide-actions">
-              <a href="https://www.facebook.com/share/1D9iwyomnZ/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn solid"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h2V2h-3c-3 0-4 2-4 4v2H8v3h2v11h4V11h3l.5-3z"/></svg><span class="mn">Албан ёсны Facebook хуудас</span><span class="en">Official Facebook page</span><span class="ar">→</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="pnav">
-        <button type="button" id="pprev" aria-label="Previous project">←</button>
-        <button type="button" id="pnext" aria-label="Next project">→</button>
       </div>
     </div>
   </div>
-</div></section>
+
+  <div class="proj-foot">
+    <div class="cap2" id="pcap">01 / 05 · ХҮСЛИЙН ТӨГӨЛ ХОТХОН</div>
+    <div class="dots" id="pdots"><i class="on"><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+  </div>
+</section>
 
 <!-- ABOUT -->
 <section id="about" style="background:var(--bg2)"><div class="wrap">
@@ -1101,21 +1011,40 @@ function show(n){const im=$$('#slides img'),d=$$('#dots i');im[si].classList.rem
 function startSlides(){if(RM)return;clearInterval(st);st=setInterval(()=>show(si+1),6500)}
 $$('#dots i').forEach((d,i)=>d.onclick=()=>{show(i);startSlides()});
 
-/* Projects 5s hero slider */
+/* Projects 5s full-screen hero slider */
+const PROJS=[
+  {logo:'assets/img/projects/p1_logo.jpg',fb:'https://www.facebook.com/share/1EdCbseKLP/?mibextid=wwXIfr',dev:['Монгол Угсаа Констракшн ХХК · Албан ёсны түнш','Mongol Ugsaa Construction LLC · Official Partner'],l1:['Хүслийн төгөл','Khusliin Tugul'],l2:['хотхон.','Town.'],cap:'01 / 05 · ХҮСЛИЙН ТӨГӨЛ ХОТХОН'},
+  {logo:'assets/img/projects/p2_logo.jpg',fb:'https://www.facebook.com/share/1d3TdkL6Ni/?mibextid=wwXIfr',dev:['Азиан Сити ХХК · Нэхмэл дахин төлөвлөлт','Asian City LLC · Nekhmel Redevelopment'],l1:['Нэхмэл дахин төлөвлөлт','Nekhmel Redevelopment'],l2:['IVY Residence.','IVY Residence.'],cap:'02 / 05 · IVY RESIDENCE ЦОГЦОЛБОР ХОТХОН'},
+  {logo:'assets/img/projects/p3_logo.jpg',fb:'https://www.facebook.com/share/1NThzq7M1x/?mibextid=wwXIfr',dev:['УИД өргөтгөл · 18 давхар үйлчилгээтэй орон сууц','UB Dept. Store Extension · 18-Storey Mixed-Use'],l1:['Улаанбаатар их дэлгүүр өргөтгөл','UB Department Store Extension'],l2:['Century Apartment.','Century Apartment.'],cap:'03 / 05 · CENTURY BUSINESS APARTMENT'},
+  {logo:'assets/img/projects/p4_logo.jpg',fb:'https://www.facebook.com/share/1CiktJTDtt/?mibextid=wwXIfr',dev:['Нутгийн Буян Групп ХХК · Албан ёсны түнш','Nutgiin Buyan Group LLC · Official Partner'],l1:['Хаппи Резидэнс','Happy Residence'],l2:['хотхон.','Town.'],cap:'04 / 05 · ХАППИ РЕЗИДЭНС ХОТХОН'},
+  {logo:'assets/img/projects/p5_logo.jpg',fb:'https://www.facebook.com/share/1D9iwyomnZ/?mibextid=wwXIfr',dev:['Нутгийн Буян Групп ХХК · Албан ёсны түнш','Nutgiin Buyan Group LLC · Official Partner'],l1:['Очир Сити','Ochir City'],l2:['хотхон.','Town.'],cap:'05 / 05 · ОЧИР СИТИ ХОТХОН'}
+];
 let psi=0,pst;
-const pslides=$$('#phero .pslide'),ptabs=$$('#ptabs .ptab');
+const pimgs=$$('#pslides img'),ptabs=$$('#ptabs .ptab'),pdots=$$('#pdots i'),pcontent=$('#pcontent');
 function showProj(n){
-  pslides[psi].classList.remove('on');
+  pimgs[psi].classList.remove('on');
   ptabs[psi].classList.remove('on');
-  psi=(n+pslides.length)%pslides.length;
-  void ptabs[psi].offsetWidth;
-  pslides[psi].classList.add('on');
+  pdots[psi].classList.remove('on');
+  psi=(n+PROJS.length)%PROJS.length;
+  pimgs[psi].classList.add('on');
   ptabs[psi].classList.add('on');
+  void pdots[psi].offsetWidth;
+  pdots[psi].classList.add('on');
+  const pr=PROJS[psi];
+  pcontent.classList.add('swapping');
+  setTimeout(()=>{
+    $('#plogo').src=pr.logo;
+    $('#ppill').href=pr.fb;
+    $('#pfb').href=pr.fb;
+    $('#pdev').innerHTML=L(pr.dev[0],pr.dev[1]);
+    $('#ptitle').innerHTML=`<span class="ln">${L(pr.l1[0],pr.l1[1])}</span><span class="ln"><span><em class="mn">${pr.l2[0]}</em><em class="en">${pr.l2[1]}</em></span></span>`;
+    $('#pcap').textContent=pr.cap;
+    pcontent.classList.remove('swapping');
+  },220);
 }
 function startProjSlides(){if(RM)return;clearInterval(pst);pst=setInterval(()=>showProj(psi+1),5000)}
 ptabs.forEach((b,i)=>b.onclick=()=>{showProj(i);startProjSlides()});
-$('#pprev').onclick=()=>{showProj(psi-1);startProjSlides()};
-$('#pnext').onclick=()=>{showProj(psi+1);startProjSlides()};
+pdots.forEach((d,i)=>d.onclick=()=>{showProj(i);startProjSlides()});
 startProjSlides();
 (()=>{const q=new URLSearchParams(location.search).get('q');if(q){$('#msg').value=q;const s=$('#sv');s.selectedIndex=/Fujilux/.test(q)?2:1;setTimeout(()=>$('#contact').scrollIntoView(),300)}})();
 function send(e){e.preventDefault();$('#sent').style.display='block';e.target.querySelectorAll('input,textarea').forEach(i=>i.value='');return false}
