@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="mn" data-lang="mn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бүтээгдэхүүний каталог — Fujilux Supply</title>
+<meta name="description" content="Kohler болон Fujilux шалны бүрэн каталог: зураг, бараа код, хэмжээ.">
+<link rel="icon" href="assets/mark.png">
+<link rel="stylesheet" href="assets/fonts.css?v=4">
+<link rel="stylesheet" href="assets/nav.css?v=4">
+<style>
+:root{--bg:#fbf9f4;--bg2:#f3efe5;--panel:#fff;--line:rgba(13,28,21,.12);--ink:#0d1c15;--mute:#3c4741;--dim:#6b746d;--gold:#c38a2c;--gold2:#a8701f;--goldL:#f2b952;--green:#0d1c15;--ease:cubic-bezier(.2,.7,.1,1);--d:'FLD','Helvetica Neue',Arial,sans-serif;--t:'FLT','Helvetica Neue',Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--t);font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+[data-lang=mn] .en,[data-lang=en] .mn{display:none!important}
+.wrap{width:min(1400px,100% - 32px);margin-inline:auto}
+@media(min-width:760px){.wrap{width:min(1400px,100% - 64px)}}
+.tb{position:sticky;top:76px;z-index:30;margin-top:76px;background:#0d1c15;color:#f7f2e7;border-bottom:1px solid rgba(242,185,82,.2)}
+.tb .wrap{display:flex;align-items:center;gap:18px;height:64px}
+.crumb{display:none;align-items:center;gap:8px;font-size:12.5px;color:#c6cec7;white-space:nowrap}
+.crumb a:hover{color:#f2b952}.crumb b{color:#f7f2e7;font-weight:400}
+@media(min-width:900px){.crumb{display:flex}}
+.xtop{position:sticky;top:0;z-index:30;background:rgba(13,28,21,.96);backdrop-filter:blur(12px);color:#f7f2e7;border-bottom:1px solid rgba(242,185,82,.2)}
+.top .wrap{display:flex;align-items:center;gap:18px;height:74px}
+.top .lg{height:44px;aspect-ratio:720/415;background:url(assets/logo-dark.png) center/contain no-repeat;flex:none}
+.top .back{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#c6cec7;display:none}
+@media(min-width:900px){.top .back{display:inline}}
+.search{flex:1;position:relative;max-width:620px;margin-left:auto}
+.search input{width:100%;background:rgba(247,242,231,.07);border:1px solid rgba(242,185,82,.3);border-radius:40px;color:#f7f2e7;font:inherit;font-size:14px;padding:12px 18px 12px 44px;outline:none;transition:border-color .3s,background .3s}
+.search input:focus{border-color:#f2b952;background:rgba(247,242,231,.12)}
+.search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:16px;height:16px;stroke:#f2b952;fill:none;stroke-width:1.6}
+.lang{display:flex;border:1px solid rgba(242,185,82,.3);border-radius:40px;padding:3px;font-size:11px}
+.lang button{background:none;border:0;color:#c6cec7;padding:6px 10px;border-radius:30px;cursor:pointer;font:inherit}
+.lang button.on{background:#f2b952;color:#0d1c15;font-weight:500}
+.qbtn{position:relative;display:flex;align-items:center;gap:8px;background:#f2b952;color:#0d1c15;border:0;border-radius:40px;padding:11px 16px;font:inherit;font-size:11.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;flex:none}
+.qbtn b{background:#0d1c15;color:#f2b952;border-radius:20px;min-width:22px;height:22px;display:grid;place-items:center;font-size:11px;padding:0 6px}
+.qbtn.bump{animation:bump .5s var(--ease)}
+@keyframes bump{40%{transform:scale(1.12)}}
+.head{padding:40px 0 26px;border-bottom:1px solid var(--line)}
+.head .k{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.head h1{font-family:var(--d);font-weight:200;font-size:clamp(32px,4vw,58px);letter-spacing:-.025em;line-height:1.02;margin:16px 0 14px}
+.head h1 em{font-style:normal;color:var(--gold2);font-weight:300}
+.head p{color:var(--mute);max-width:70ch}
+.head .stats{display:flex;gap:28px;margin-top:22px;font-size:13px;color:var(--mute);flex-wrap:wrap}
+.head .stats b{font-family:var(--d);font-weight:300;font-size:28px;color:var(--ink);display:block;letter-spacing:-.02em}
+.layout{display:grid;gap:30px;padding:30px 0 80px}
+@media(min-width:1000px){.layout{grid-template-columns:260px 1fr}}
+aside{align-self:start;min-width:0}
+main{min-width:0}
+@media(min-width:1000px){aside{position:sticky;top:160px;max-height:calc(100vh - 175px);overflow:auto;padding-right:6px}}
+aside h6{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;margin:0 0 10px}
+.cats{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+@media(min-width:1000px){.cats{flex-direction:column;overflow:visible}}
+.cats button{flex:none;display:flex;justify-content:space-between;gap:14px;align-items:center;text-align:left;background:none;border:1px solid var(--line);border-radius:40px;padding:9px 14px;font:inherit;font-size:13px;color:var(--mute);cursor:pointer;transition:all .3s;white-space:nowrap}
+@media(min-width:1000px){.cats button{border:0;border-radius:6px;padding:9px 12px}}
+.cats button i{font-style:normal;font-size:11px;color:var(--dim)}
+.cats button:hover{color:var(--ink);background:rgba(195,138,44,.07)}
+.cats button.on{background:var(--ink);color:#f7f2e7;border-color:var(--ink)}
+.cats button.on i{color:#f2b952}
+.cats .g{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:500;margin:18px 0 4px 12px;flex:none;align-self:flex-start}
+@media(max-width:999px){.cats .g{display:none}}
+.cats button.sub{padding-left:24px}
+.opts{margin-top:22px;display:flex;flex-direction:column;gap:10px;font-size:13px;color:var(--mute)}
+@media(max-width:999px){.opts{flex-direction:row;flex-wrap:wrap;margin-top:12px}}
+.opts label{display:flex;gap:8px;align-items:center;cursor:pointer}
+.opts input{accent-color:#c38a2c}
+.bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;font-size:13px;color:var(--mute);gap:10px;flex-wrap:wrap}
+.bar b{color:var(--ink);font-weight:500}
+.bar select{font:inherit;font-size:13px;border:1px solid var(--line);border-radius:30px;padding:7px 12px;background:var(--panel);color:var(--ink)}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+@media(min-width:1300px){.grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:transform .5s var(--ease),box-shadow .5s,border-color .3s;animation:cin .7s var(--ease) both}
+@keyframes cin{from{opacity:0;transform:translateY(16px)}}
+.card:hover{transform:translateY(-4px);box-shadow:0 24px 50px -28px rgba(13,28,21,.35);border-color:rgba(195,138,44,.45)}
+.card .im{aspect-ratio:1;background:#fff;display:grid;place-items:center;padding:14px;position:relative;overflow:hidden}
+.card .im img{max-width:100%;max-height:100%;object-fit:contain;transition:transform .8s var(--ease)}
+.card:hover .im img{transform:scale(1.06)}
+.card.fl .im{padding:0}.card.fl .im img{width:100%;height:100%;object-fit:cover;max-width:none;max-height:none}
+.head.cat .stats,.head.cat p{display:none}
+.card .im .nophoto{width:46%;opacity:.25}
+.card .br{position:absolute;left:10px;top:10px;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);background:rgba(251,249,244,.9);padding:4px 8px;border-radius:20px}
+.card .bd{padding:14px 16px 16px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:4px;flex:1}
+.card .ct{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.card h3{font-family:var(--d);font-weight:300;font-size:17px;line-height:1.2;letter-spacing:-.005em}
+.card .code{font-size:12px;color:var(--mute);font-variant-numeric:tabular-nums}
+.card .dm{font-size:12px;color:var(--dim)}
+.card .add{margin-top:auto;align-self:flex-start;margin-top:10px;font:inherit;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;border:1px solid var(--line);background:none;border-radius:30px;padding:7px 12px;cursor:pointer;color:var(--ink);transition:all .3s}
+.card .add:hover{border-color:var(--gold);background:rgba(242,185,82,.15)}
+.card .add.in{background:var(--ink);color:#f2b952;border-color:var(--ink)}
+.more{display:block;margin:34px auto 0;font:inherit;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;background:none;border:1px solid var(--gold);color:var(--ink);border-radius:40px;padding:14px 26px;cursor:pointer}
+.empty{padding:60px 0;text-align:center;color:var(--mute)}
+/* modal */
+.md{position:fixed;inset:0;z-index:60;background:rgba(8,16,12,.6);backdrop-filter:blur(8px);display:grid;place-items:center;padding:16px;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s}
+.md.open{opacity:1;visibility:visible}
+.md .box{background:var(--bg);border-radius:10px;max-width:1000px;width:100%;max-height:92vh;overflow:auto;display:grid;transform:translateY(20px) scale(.97);transition:transform .6s var(--ease);position:relative}
+.md.open .box{transform:none}
+@media(min-width:820px){.md .box{grid-template-columns:1.1fr 1fr}}
+.md .pic{background:#0d1c15;position:relative;min-height:320px;overflow:hidden}
+.md .pic>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .6s,transform 1.4s cubic-bezier(.2,.7,.1,1)}
+.md .pic>img.cut{object-fit:contain;background:#fff;padding:30px}
+.md .pic>img.on{opacity:1;transform:none}
+.md .thumbs{position:absolute;left:14px;bottom:14px;display:flex;gap:8px;z-index:2}
+.md .thumbs button{width:62px;height:62px;border-radius:8px;overflow:hidden;border:2px solid rgba(255,255,255,.5);padding:0;cursor:pointer;background:#fff;transition:border-color .3s,transform .3s}
+.md .thumbs button img{width:100%;height:100%;object-fit:cover}
+.md .thumbs button.cut img{object-fit:contain;padding:4px}
+.md .thumbs button.on{border-color:#f2b952;transform:translateY(-3px)}
+.md .ptag{position:absolute;right:14px;top:14px;z-index:2;font-size:10px;letter-spacing:.2em;text-transform:uppercase;background:rgba(13,28,21,.75);color:#f2c46d;padding:6px 10px;border-radius:20px}
+@media(min-width:820px){.md .pic{min-height:520px}}
+/* card: product cut-out, lifestyle photo on hover */
+.card{text-decoration:none}
+.card .im img.life{position:absolute;inset:0;width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;opacity:0;transition:opacity .6s,transform 1.2s cubic-bezier(.2,.7,.1,1);transform:scale(1.08)}
+.card:hover .im img.life{opacity:1;transform:none}
+.card .im.cover{padding:0}
+.card .im.cover img.life{opacity:1;transform:none}
+.card:hover .im.cover img.life{transform:scale(1.06)}
+.md .tx{padding:34px;display:flex;flex-direction:column;gap:14px}
+.md .tx .ct{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.md .tx h2{font-family:var(--d);font-weight:200;font-size:clamp(30px,3.4vw,44px);letter-spacing:-.02em;line-height:1.05}
+.md .tx p{color:var(--mute);font-size:14px}
+.md dl{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:13px;border-top:1px solid var(--line);padding-top:14px}
+.md dt{color:var(--dim)}
+.md dd{font-variant-numeric:tabular-nums}
+.md dd code{font-family:var(--t);background:var(--bg2);border-radius:4px;padding:1px 6px;margin:0 4px 4px 0;display:inline-block;font-size:12px}
+.md .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border-radius:40px;font:inherit;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;cursor:pointer;border:1px solid var(--gold);background:none;color:var(--ink)}
+.btn.solid{background:#f2b952;border-color:#f2b952;color:#0d1c15}
+.md .x{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--bg);font-size:20px;cursor:pointer;z-index:2}
+.md .src{font-size:11px;color:var(--dim)}
+/* quote drawer */
+.dr{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);z-index:70;background:var(--bg);box-shadow:-30px 0 60px -30px rgba(0,0,0,.4);transform:translateX(105%);transition:transform .6s var(--ease);display:flex;flex-direction:column}
+.dr.open{transform:none}
+.dr header{padding:24px 24px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.dr header h3{font-family:var(--d);font-weight:300;font-size:26px}
+.dr .lst{flex:1;overflow:auto;padding:10px 24px}
+.dr .row{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}
+.dr .row img{width:56px;height:56px;object-fit:contain;background:#fff;border-radius:6px;border:1px solid var(--line)}
+.dr .row input{width:56px;font:inherit;border:1px solid var(--line);border-radius:6px;padding:4px 6px;margin-top:4px}
+.dr .row button{background:none;border:0;font-size:18px;color:var(--dim);cursor:pointer}
+.dr footer{padding:18px 24px 24px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.dr textarea{font:inherit;font-size:13px;border:1px solid var(--line);border-radius:8px;padding:10px;min-height:70px;resize:vertical;background:var(--panel)}
+.scrim{position:fixed;inset:0;z-index:65;background:rgba(8,16,12,.45);opacity:0;visibility:hidden;transition:.4s}
+.scrim.on{opacity:1;visibility:visible}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,40px);opacity:0;background:#0d1c15;color:#f7f2e7;padding:12px 18px;border-radius:30px;font-size:13px;z-index:80;transition:all .5s var(--ease)}
+.toast.on{transform:translate(-50%,0);opacity:1}
+.search{min-width:0}
+@media(max-width:620px){.tb .wrap{gap:10px;height:58px}.qbtn>span{display:none}.qbtn{padding:9px 10px}.lang button{padding:5px 7px}.search input{padding:10px 12px 10px 36px;font-size:13px}.search svg{left:12px}}
+.note{font-size:11px;color:var(--dim);margin-top:30px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body data-page="catalog">
+<script src="assets/nav.js?v=4"></script>
+<div class="tb"><div class="wrap">
+  <nav class="crumb" aria-label="breadcrumb"><a href="index.html"><span class="mn">Нүүр</span><span class="en">Home</span></a><span>/</span><a href="catalog.html" id="cr1"></a><span id="crs">/</span><b id="cr2"></b></nav>
+  <label class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" placeholder="Нэр, бараа код (жишээ: Veil, K-20169)…" autocomplete="off"></label>
+  <button class="qbtn" id="qb"><span class="mn">Үнийн саналын жагсаалт</span><span class="en">Quote list</span><b id="qn">0</b></button>
+</div></div>
+
+<div class="wrap">
+  <div class="head">
+    <div class="k"><span class="mn">Бүтээгдэхүүний каталог</span><span class="en">Product catalogue</span></div>
+    <h1 id="htitle"></h1>
+    <p><span class="mn">KOHLER 2023–2024 бүрэн каталог болон Fujilux шалны каталогийн бүтээгдэхүүнүүд — зураг, бараа код, хэмжээтэй. Хэрэгтэй бүтээгдэхүүнээ жагсаалтад нэмээд үнийн санал авна уу.</span><span class="en">Products from the KOHLER 2023–2024 catalogues and the Fujilux flooring range — with photos, product codes and dimensions. Add what you need to your list and request a quote.</span></p>
+    <div class="stats" id="stats"></div>
+  </div>
+  <div class="layout">
+    <aside>
+      <h6><span class="mn">Ангилал</span><span class="en">Categories</span></h6>
+      <div class="cats" id="cats"></div>
+      <div class="opts">
+        <label><input type="checkbox" id="onlyimg" checked> <span class="mn">Зөвхөн зурагтай</span><span class="en">With photo only</span></label>
+        <label><input type="radio" name="br" value="all" checked> <span class="mn">Бүх брэнд</span><span class="en">All brands</span></label>
+        <label><input type="radio" name="br" value="Kohler"> Kohler</label>
+        <label><input type="radio" name="br" value="Fujilux"> <span class="mn">Fujilux шал</span><span class="en">Fujilux flooring</span></label>
+      </div>
+    </aside>
+    <main>
+      <div class="bar"><div id="cnt"></div><select id="sort"><option value="cat" data-mn="Ангиллаар" data-en="By category">Ангиллаар</option><option value="name" data-mn="Нэрээр (A–Z)" data-en="By name (A–Z)">Нэрээр (A–Z)</option><option value="code" data-mn="Кодоор" data-en="By code">Кодоор</option></select></div>
+      <div class="grid" id="grid"></div>
+      <button class="more" id="more"><span class="mn">Цааш үзэх</span><span class="en">Load more</span></button>
+      <p class="note"><span class="mn">Мэдээллийн эх сурвалж: KOHLER Full Line 2023–2024, KOHLER Exquisite 2023–2024 каталог, Fujilux шалны танилцуулга. Каталогт өгөгдсөн өнгө, хэмжээ, кодыг захиалахын өмнө манай багтай баталгаажуулна уу.</span><span class="en">Sources: KOHLER Full Line and Exquisite 2023–2024 catalogues, Fujilux flooring presentation. Please confirm finishes, sizes and codes with our team before ordering.</span></p>
+    </main>
+  </div>
+</div>
+
+<div class="md" id="md"><div class="box"><button class="x" id="mx" aria-label="Close">×</button><div class="pic" id="pic"></div><div class="tx">
+  <div class="ct" id="mc"></div><h2 id="mn"></h2><p id="md2"></p><dl id="mdl"></dl>
+  <div class="acts"><button class="btn solid" id="madd"></button><a class="btn" id="mq" href="index.html#contact"><span class="mn">Үнийн санал авах</span><span class="en">Request a quote</span> →</a></div>
+  <div class="src" id="msrc"></div>
+</div></div></div>
+
+<div class="scrim" id="scrim"></div>
+<div class="dr" id="dr"><header><h3><span class="mn">Үнийн саналын жагсаалт</span><span class="en">Quote list</span></h3><button class="btn" id="dx" style="padding:8px 12px">×</button></header>
+  <div class="lst" id="lst"></div>
+  <footer>
+    <textarea id="qnote" placeholder="Төслийн нэр, хүргэх хугацаа, нэмэлт тайлбар…"></textarea>
+    <a class="btn solid" id="qmail" href="#"><span class="mn">Имэйлээр илгээх</span><span class="en">Send by email</span> →</a>
+    <a class="btn" id="qform" href="index.html#contact"><span class="mn">Сайтын формоор илгээх</span><span class="en">Send via site form</span></a>
+    <button class="btn" id="qcopy"><span class="mn">Жагсаалтыг хуулах</span><span class="en">Copy list</span></button>
+  </footer>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="assets/products.js"></script>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const L=(m,e)=>`<span class="mn">${m}</span><span class="en">${e}</span>`;
+const CAT={suite:['Иж бүрдэл','Suites'],konnect:['Ухаалаг гэр (Konnect)','Smart home (Konnect)'],smarttoilet:['Ухаалаг суултуур','Intelligent toilets'],toilet:['Суултуур','Toilets'],wallhung:['Ханын суултуур, товчлуур','Wall-hung toilets & plates'],smartseat:['Ухаалаг суудал','Smart seats'],seat:['Суултуурын таг','Toilet seats'],basin:['Угаалтуур','Lavatories'],faucet:['Холигч, шүршүүр','Faucets & showers'],bath:['Ванн','Baths'],showerroom:['Шүршүүрийн кабин','Shower enclosures'],furniture:['Угаалгын өрөөний тавилга','Bathroom furniture'],mirror:['Тольтой шкаф','Mirror cabinets'],artist:['Урлагийн цуглуулга','Artist Editions'],kitchen:['Гал тогоо','Kitchen'],heater:['Халаагч, агаар сэлгэгч','Bathroom heaters'],towel:['Алчуур хатаагч','Towel warmers'],commercial:['Нийтийн барилга','Commercial'],floor:['Шал (Fujilux)','Flooring (Fujilux)']};
+const ORDER=Object.keys(CAT);
+const FIN={CP:['Гялгар хром','Polished chrome'],BN:['Сойздсон никель','Brushed nickel'],BL:['Бүдэг хар','Matte black'],AF:['Францын алт','French gold'],BV:['Сойздсон хүрэл','Brushed bronze'],'2MB':['Сойздсон гууль','Brushed brass'],RGD:['Ягаан алт','Rose gold'],TT:['Титан','Titanium']};
+const P=window.PRODUCTS.map((p,i)=>Object.assign(p,{id:i,_s:(p.n+' '+p.k.join(' ')+' '+(CAT[p.c]||['',''])[0]+' '+(CAT[p.c]||['',''])[1]).toLowerCase()}));
+const GROUPS=[['bath',['Угаалгын өрөө','Bathroom'],[['smarttoilet',['Ухаалаг суултуур','Intelligent toilets']],['toilet,wallhung',['Суултуур','Toilets']],['basin',['Угаалтуур','Lavatories']],['faucet',['Холигч, шүршүүр','Faucets & showers']],['bath',['Ванн','Baths']],['showerroom',['Шүршүүрийн кабин','Shower enclosures']],['furniture,mirror',['Тавилга, толь','Furniture & mirrors']],['seat,smartseat',['Суултуурын таг','Toilet seats']],['heater,towel,konnect',['Халаагч, дагалдах','Heaters & accessories']],['artist,suite',['Тансаг цуглуулга','Luxury collections']]]],
+ ['floor',['Шал','Flooring'],[['floor',['Бүх шал','All flooring']],['floor:p1',['3 давхар модон шал','Engineered wood']],['floor:p2',['Олон давхарт шал','Multilayer']],['floor:p3',['Шахмал шал','Laminate']]]],
+ ['more',['Бусад','More'],[['commercial',['Нийтийн барилга','Commercial washrooms']],['kitchen',['Гал тогоо','Kitchen']]]]];
+const LABEL={};GROUPS.forEach(g=>g[2].forEach(x=>LABEL[x[0]]=x[1]));
+function match(p,c){if(c=='all')return true;return c.split(',').some(k=>{const[a,b]=k.split(':');return p.c==a&&(!b||p.sub==b)})}
+let st={cat:'all',q:'',img:true,br:'all',sort:'cat',shown:0};
+const PAGE=60;let list=[];
+let Q=[];try{Q=JSON.parse(localStorage.getItem('fl-quote')||'[]')}catch(e){}
+function saveQ(){try{localStorage.setItem('fl-quote',JSON.stringify(Q))}catch(e){};$('#qn').textContent=Q.length;$('#qb').classList.remove('bump');void $('#qb').offsetWidth;$('#qb').classList.add('bump')}
+
+function desc(p){const t=CAT[p.c]||['',''];const parts=[[],[]];
+  if(p.b=='Fujilux'){parts[0].push(`${p.n} цувралын шал. Бараа кодоор нь захиална.`);parts[1].push(`${p.n} series flooring. Order by product code.`)}
+  else{parts[0].push(`KOHLER ${p.n!='KOHLER'?p.n+' цувралын ':''}${t[0].toLowerCase()}.`);parts[1].push(`KOHLER ${p.n!='KOHLER'?p.n+' ':''}${t[1].toLowerCase()}.`)}
+  if(p.v.length){parts[0].push(`Нэг удаагийн ус зарцуулалт ${p.v.join(', ')}.`);parts[1].push(`Flush volume ${p.v.join(', ')}.`)}
+  if(p.r.length){parts[0].push(`Ус зайлуулах цэгийн зай ${p.r.map(x=>x+'mm').join(' / ')} хувилбартай.`);parts[1].push(`Available in ${p.r.map(x=>x+'mm').join(' / ')} rough-in.`)}
+  return L(parts[0].join(' '),parts[1].join(' '))}
+function fins(code){const m=code.match(/-((?:[A-Z0-9]{2,3}\*?\/)+[A-Z0-9]{2,3}\*?)$/);if(!m)return null;return m[1].replace(/\*/g,'').split('/')}
+function filter(){const q=st.q.trim().toLowerCase();
+  list=P.filter(p=>match(p,st.cat)&&(!st.img||p.i||p.l)&&(st.br=='all'||p.b==st.br)&&(!q||q.split(/\s+/).every(w=>p._s.includes(w))));
+  if(st.sort=='name')list.sort((a,b)=>a.n.localeCompare(b.n));else if(st.sort=='code')list.sort((a,b)=>a.k[0].localeCompare(b.k[0]));else list.sort((a,b)=>ORDER.indexOf(a.c)-ORDER.indexOf(b.c)||a.id-b.id);
+  st.shown=0;$('#grid').innerHTML='';render();
+  $('#cnt').innerHTML=L(`<b>${list.length.toLocaleString()}</b> бүтээгдэхүүн`,`<b>${list.length.toLocaleString()}</b> products`);
+  if(!list.length)$('#grid').innerHTML=`<div class="empty">${L('Илэрц олдсонгүй. Өөр үгээр хайгаад үзээрэй.','No results. Try another search.')}</div>`}
+function card(p){const t=CAT[p.c];const inQ=Q.some(x=>x.id==p.id);
+  return `<article class="card${p.b=='Fujilux'?' fl':''}" data-id="${p.id}" style="animation-delay:${(st.shown%PAGE)%12*30}ms"><div class="im${p.i?'':' cover'}">${p.i?`<img src="${p.i}" alt="${p.n} ${p.k[0]}" loading="lazy">`:''}${p.l?`<img class="life" src="${p.l.replace('assets/l/','assets/l/t/')}" alt="" loading="lazy">`:''}${!p.i&&!p.l?'<img class="nophoto" src="assets/mark.png" alt="">':''}<span class="br">${p.b}</span></div>
+  <div class="bd"><div class="ct">${L(t[0],t[1])}</div><h3>${p.n=='KOHLER'?'KOHLER '+L(t[0],t[1]):p.n}</h3><div class="code">${p.k[0]}${p.k.length>1?` <span style="color:var(--dim)">+${p.k.length-1}</span>`:''}</div>${p.d[0]?`<div class="dm">${p.d[0]}</div>`:''}
+  <button class="add${inQ?' in':''}" data-add="${p.id}">${inQ?L('✓ Нэмсэн','✓ Added'):L('+ Жагсаалт','+ Add')}</button></div></article>`}
+function render(){const chunk=list.slice(st.shown,st.shown+PAGE);$('#grid').insertAdjacentHTML('beforeend',chunk.map(p=>{const h=card(p);st.shown++;return h}).join(''));$('#more').style.display=st.shown<list.length?'block':'none'}
+function cats(){const n=c=>P.filter(p=>(!st.img||p.i||p.l)&&match(p,c)).length;
+  $('#cats').innerHTML=`<button data-c="all" class="${st.cat=='all'?'on':''}">${L('Бүх бүтээгдэхүүн','All products')}<i>${n('all')}</i></button>`+GROUPS.map(g=>`<div class="g">${L(g[1][0],g[1][1])}</div>`+g[2].map(x=>`<button data-c="${x[0]}" class="sub ${st.cat==x[0]?'on':''}">${L(x[1][0],x[1][1])}<i>${n(x[0])}</i></button>`).join('')).join('');
+  $$('#cats button').forEach(b=>b.onclick=()=>{st.cat=b.dataset.c;$$('#cats button').forEach(x=>x.classList.toggle('on',x==b));head();filter();history.replaceState(null,'',st.cat=='all'?'catalog.html':'catalog.html?cat='+st.cat);window.scrollTo({top:$('.layout').offsetTop-150,behavior:'smooth'})})}
+function head(){const lb=LABEL[st.cat];$('#cr1').innerHTML=L('Каталог','Catalogue');$('#crs').style.display=lb?'':'none';$('#cr2').innerHTML=lb?L(lb[0],lb[1]):'';
+  $('.head').classList.toggle('cat',!!lb);$('#htitle').innerHTML=lb?L(lb[0],lb[1]):L('Бүх бүтээгдэхүүн, <em>нэг дор.</em>','Every product, <em>in one place.</em>')}
+function stats(){const k=P.filter(p=>p.b=='Kohler').length,f=P.filter(p=>p.b=='Fujilux').length,im=P.filter(p=>p.i||p.l).length;
+  $('#stats').innerHTML=`<div><b>${P.length.toLocaleString()}</b>${L('бүтээгдэхүүн','products')}</div><div><b>${im.toLocaleString()}</b>${L('зурагтай','with photos')}</div><div><b>${k.toLocaleString()}</b>Kohler</div><div><b>${f}</b>${L('шалны өнгө','floor colours')}</div><div><b>${Object.keys(CAT).length}</b>${L('ангилал','categories')}</div>`}
+let cur=null;
+function openM(id){const p=P[id];cur=p;const t=CAT[p.c];const shots=[];if(p.l)shots.push(['life',p.l]);if(p.i)shots.push(['cut',p.i]);if(!shots.length)shots.push(['cut','assets/mark.png']);
+  $('#pic').innerHTML=shots.map((x,i)=>`<img class="${x[0]}${i?'':' on'}" src="${x[1]}" alt="">`).join('')+(shots.length>1?`<div class="thumbs">${shots.map((x,i)=>`<button class="${x[0]}${i?'':' on'}" data-i="${i}" aria-label="photo"><img src="${x[1]}" alt=""></button>`).join('')}</div>`:'')+(p.l?`<span class="ptag">${L('Каталогийн зураг','Catalogue photo')}</span>`:'');
+  $$('#pic .thumbs button').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;$$('#pic>img').forEach((m,j)=>m.classList.toggle('on',i==j));$$('#pic .thumbs button').forEach((x,j)=>x.classList.toggle('on',i==j));$('#pic .ptag')&&($('#pic .ptag').style.display=shots[i][0]=='life'?'':'none')});$('#mc').innerHTML=p.b.toUpperCase()+' · '+L(t[0],t[1]);$('#mn').innerHTML=p.n=='KOHLER'?'KOHLER '+L(t[0],t[1]):p.n;$('#md2').innerHTML=desc(p);
+  let dl=`<dt>${L('Бараа код','Codes')}</dt><dd>${p.k.map(c=>`<code>${c}</code>`).join('')}</dd>`;
+  if(p.d.length)dl+=`<dt>${L('Хэмжээ','Dimensions')}</dt><dd>${p.d.join('<br>')}</dd>`;
+  if(p.v.length)dl+=`<dt>${L('Ус зарцуулалт','Flush volume')}</dt><dd>${p.v.join(', ')}</dd>`;
+  if(p.r.length)dl+=`<dt>${L('Ус зайлуулах зай','Rough-in')}</dt><dd>${p.r.map(x=>x+' mm').join(' / ')}</dd>`;
+  const f=fins(p.k[0]);if(f)dl+=`<dt>${L('Өнгөлгөө','Finishes')}</dt><dd>${f.map(c=>FIN[c]?`<code>${c} · ${L(FIN[c][0],FIN[c][1])}</code>`:`<code>${c}</code>`).join('')}</dd>`;
+  $('#mdl').innerHTML=dl;$('#msrc').innerHTML=L('Эх сурвалж: ','Source: ')+(p.b=='Kohler'?'KOHLER '+p.s.replace(' · ',L(' каталог, х. ',' catalogue, p. ')):p.s);
+  $('#mq').href='index.html?q='+encodeURIComponent(p.b+' '+p.n+' '+p.k[0])+'#contact';updM();$('#md').classList.add('open')}
+function updM(){const inQ=Q.some(x=>x.id==cur.id);$('#madd').innerHTML=inQ?L('✓ Жагсаалтад байна','✓ In list'):L('+ Жагсаалтад нэмэх','+ Add to list')}
+function toggleQ(id){const i=Q.findIndex(x=>x.id==id);if(i>-1)Q.splice(i,1);else{Q.push({id,qty:1});toast(L('Жагсаалтад нэмэгдлээ','Added to list'))}saveQ();drawQ();
+  $$(`[data-add="${id}"]`).forEach(b=>{const on=Q.some(x=>x.id==id);b.classList.toggle('in',on);b.innerHTML=on?L('✓ Нэмсэн','✓ Added'):L('+ Жагсаалт','+ Add')});if(cur&&cur.id==id)updM()}
+function drawQ(){$('#lst').innerHTML=Q.length?Q.map(x=>{const p=P[x.id];return `<div class="row"><img src="${p.i||(p.l?p.l.replace('assets/l/','assets/l/t/'):'assets/mark.png')}" alt=""><div><b style="font-weight:500">${p.n}</b><br><span style="color:var(--mute)">${x.code||p.k[0]}</span><br><input type="number" min="1" value="${x.qty}" data-q="${x.id}"> ${L('ш','pcs')}</div><button data-rm="${p.id}" aria-label="Remove">×</button></div>`}).join(''):`<p class="empty">${L('Жагсаалт хоосон байна.','Your list is empty.')}</p>`;
+  $$('[data-rm]').forEach(b=>b.onclick=()=>toggleQ(+b.dataset.rm));$$('[data-q]').forEach(i=>i.onchange=()=>{const x=Q.find(z=>z.id==+i.dataset.q);x.qty=Math.max(1,+i.value||1);saveQ();linkQ()});linkQ()}
+function qtext(){return Q.map((x,i)=>{const p=P[x.id];return `${i+1}. ${p.b} ${p.n} — ${x.code||p.k[0]} × ${x.qty}`}).join('\n')+($('#qnote').value?'\n\n'+$('#qnote').value:'')}
+function linkQ(){const t=qtext();$('#qmail').href='mailto:info@fujilux.llc?subject='+encodeURIComponent('Үнийн санал — Fujilux каталог')+'&body='+encodeURIComponent('Сайн байна уу,\n\nДараах бүтээгдэхүүнд үнийн санал авах хүсэлтэй байна:\n\n'+t);$('#qform').href='index.html?q='+encodeURIComponent(t)+'#contact'}
+function toast(h){const t=$('#toast');t.innerHTML=h;t.classList.add('on');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('on'),1800)}
+$('#grid').addEventListener('click',e=>{const a=e.target.closest('[data-add]');if(a){e.stopPropagation();toggleQ(+a.dataset.add);return}const c=e.target.closest('.card');if(c){try{sessionStorage.setItem('fl-cat-state',JSON.stringify({u:location.search,q:st.q,img:st.img,br:st.br,sort:st.sort,shown:st.shown,y:scrollY}))}catch(_){}}if(c)location.href='product.html?k='+encodeURIComponent(P[+c.dataset.id].k[0])});
+$('#madd').onclick=()=>toggleQ(cur.id);$('#mx').onclick=()=>$('#md').classList.remove('open');$('#md').onclick=e=>{if(e.target.id=='md')$('#md').classList.remove('open')};
+function dr(o){$('#dr').classList.toggle('open',o);$('#scrim').classList.toggle('on',o);if(o)drawQ()}
+$('#qb').onclick=()=>dr(true);$('#dx').onclick=()=>dr(false);$('#scrim').onclick=()=>dr(false);$('#qnote').oninput=linkQ;
+$('#qcopy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(qtext()).then(()=>toast(L('Хуулагдлаа','Copied')))};
+addEventListener('keydown',e=>{if(e.key=='Escape'){$('#md').classList.remove('open');dr(false)}});
+let tm;$('#q').oninput=e=>{clearTimeout(tm);tm=setTimeout(()=>{st.q=e.target.value;filter()},180)};
+$('#onlyimg').onchange=e=>{st.img=e.target.checked;cats();filter()};
+$$('input[name=br]').forEach(r=>r.onchange=()=>{st.br=r.value;filter()});
+$('#sort').onchange=e=>{st.sort=e.target.value;filter()};
+$('#more').onclick=render;
+new IntersectionObserver(es=>{if(es[0].isIntersecting&&st.shown<list.length&&st.shown>0)render()},{rootMargin:'600px'}).observe($('#more'));
+function setLang(l){document.documentElement.dataset.lang=l;$$('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l==l));$$('option[data-mn]').forEach(o=>o.textContent=o.dataset[l]);$('#q').placeholder=l=='mn'?'Нэр, бараа код (жишээ: Veil, K-20169)…':'Name or code (e.g. Veil, K-20169)…';try{localStorage.setItem('fl-lang',l)}catch(e){}}
+$$('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));try{const s=localStorage.getItem('fl-lang');if(s)setLang(s)}catch(e){}
+const u=new URLSearchParams(location.search);const uc=u.get('cat'),us=u.get('sub');if(uc){st.cat=us?uc+':'+us:uc;if(!LABEL[st.cat]&&!uc.split(',').every(k=>CAT[k.split(':')[0]]))st.cat='all'}if(location.hash=='#search')setTimeout(()=>$('#q').focus(),300);if(u.get('q')){st.q=u.get('q');$('#q').value=st.q}
+if(location.hash=='#quote')setTimeout(()=>dr(true),400);
+let RS=null;try{RS=JSON.parse(sessionStorage.getItem('fl-cat-state')||'null')}catch(_){}
+if(RS&&RS.u===location.search){st.q=RS.q||'';$('#q').value=st.q;st.img=RS.img;$('#onlyimg').checked=RS.img;st.br=RS.br;const r=document.querySelector('input[name=br][value="'+RS.br+'"]');if(r)r.checked=true;st.sort=RS.sort;$('#sort').value=RS.sort}
+$('#qn').textContent=Q.length;stats();cats();head();filter();
+if(RS&&RS.u===location.search){while(st.shown<Math.min(RS.shown,list.length))render();history.scrollRestoration='manual';requestAnimationFrame(()=>scrollTo(0,RS.y));sessionStorage.removeItem('fl-cat-state')}
+</script>
+</body>
+</html>

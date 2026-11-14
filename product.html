@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="mn" data-lang="mn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бүтээгдэхүүн — Fujilux Supply</title>
+<link rel="icon" href="assets/mark.png">
+<link rel="stylesheet" href="assets/fonts.css?v=4">
+<link rel="stylesheet" href="assets/nav.css?v=4">
+<style>
+:root{--bg:#fbf9f4;--bg2:#f3efe5;--panel:#fff;--line:rgba(13,28,21,.12);--ink:#0d1c15;--mute:#3c4741;--dim:#6b746d;--gold:#c38a2c;--gold2:#a8701f;--goldL:#f2b952;--ease:cubic-bezier(.2,.7,.1,1);--d:'FLD','Helvetica Neue',Arial,sans-serif;--t:'FLT','Helvetica Neue',Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--t);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+[data-lang=mn] .en,[data-lang=en] .mn{display:none!important}
+.wrap{width:min(1400px,100% - 32px);margin-inline:auto}
+@media(min-width:760px){.wrap{width:min(1400px,100% - 64px)}}
+.tb{margin-top:76px;background:#0d1c15;color:#c6cec7;border-bottom:1px solid rgba(242,185,82,.2)}
+.tb .back{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(242,185,82,.45);border-radius:30px;padding:6px 14px;color:#f7f2e7;font-size:12px;letter-spacing:.06em;flex:none}
+.tb .back:hover{background:rgba(242,185,82,.15);color:#f2b952}
+.tb .sep{width:1px;height:18px;background:rgba(242,185,82,.25);margin:0 6px;flex:none}
+@media(max-width:640px){.tb .wrap>a:not(.back),.tb .wrap>span,.tb .wrap>.sep{display:none}}
+.tb .wrap{display:flex;align-items:center;gap:10px;height:52px;font-size:12.5px;white-space:nowrap;overflow:hidden}
+.tb a:hover{color:#f2b952}.tb b{color:#f7f2e7;font-weight:400;overflow:hidden;text-overflow:ellipsis}
+.tb .q{margin-left:auto;display:flex;align-items:center;gap:8px;background:#f2b952;color:#0d1c15;border:0;border-radius:30px;padding:7px 14px;font:inherit;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.tb .q b{background:#0d1c15;color:#f2b952;border-radius:20px;min-width:20px;height:20px;display:grid;place-items:center;font-size:10.5px;padding:0 5px}
+/* spread */
+.spread{display:grid;gap:0;background:var(--panel);border-bottom:1px solid var(--line)}
+@media(min-width:1000px){.spread{grid-template-columns:1.15fr 1fr;min-height:calc(100vh - 128px)}}
+.gal{position:relative;background:#0d1c15;min-height:62vh;overflow:hidden}
+@media(min-width:1000px){.gal{position:sticky;top:76px;height:calc(100vh - 128px)}}
+.gal .sl{position:absolute;inset:0;opacity:0;transition:opacity .8s ease}
+.gal .sl.on{opacity:1}
+.gal .sl img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 6s linear}
+.gal .sl.on img{transform:scale(1)}
+.gal .sl.cut{background:#fff}
+.gal .sl.cut img{object-fit:contain;padding:8%;transform:none}
+.gal .tag{position:absolute;left:22px;top:22px;z-index:2;font-size:10px;letter-spacing:.24em;text-transform:uppercase;background:rgba(13,28,21,.75);color:#f2c46d;padding:7px 12px;border-radius:20px;backdrop-filter:blur(6px)}
+.gal .th{position:absolute;left:22px;bottom:22px;z-index:2;display:flex;gap:10px;flex-wrap:wrap;max-width:calc(100% - 44px)}
+.gal .th button{width:70px;height:70px;border-radius:8px;overflow:hidden;border:2px solid rgba(255,255,255,.55);background:#fff;padding:0;cursor:pointer;transition:transform .3s,border-color .3s}
+.gal .th button img{width:100%;height:100%;object-fit:cover}
+.gal .th button.cut img{object-fit:contain;padding:5px}
+.gal .th button.on{border-color:#f2b952;transform:translateY(-4px)}
+.info{padding:clamp(28px,4vw,64px);display:flex;flex-direction:column;gap:22px}
+.brandrow{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brandrow img{height:26px}
+.brandrow .fb{font-family:var(--d);letter-spacing:.3em;font-size:18px}
+.brandrow small{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.info h1{font-family:var(--d);font-weight:200;font-size:clamp(40px,5vw,76px);letter-spacing:-.025em;line-height:1}
+.info .typ{font-size:15px;color:var(--gold2);letter-spacing:.02em;margin-top:-8px}
+.info .lead{font-size:17px;color:var(--mute);max-width:56ch;line-height:1.7}
+.info .lead p+p{margin-top:12px}
+.info .tr{font-size:11px;color:var(--dim)}
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.keys div{background:var(--bg);padding:16px 18px}
+.keys small{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
+.keys b{font-family:var(--d);font-weight:300;font-size:22px;letter-spacing:-.01em}
+.fins{display:flex;gap:10px;flex-wrap:wrap}
+.fins span{display:flex;align-items:center;gap:8px;font-size:12.5px;border:1px solid var(--line);border-radius:30px;padding:6px 12px 6px 6px;background:var(--panel)}
+.fins i{width:20px;height:20px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+.acts{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 24px;border-radius:40px;font:inherit;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;cursor:pointer;border:1px solid var(--gold);background:none;color:var(--ink);transition:all .3s}
+.btn.solid{background:#f2b952;border-color:#f2b952;color:#0d1c15}
+.btn:hover{transform:translateY(-2px)}
+.btn.in{background:#0d1c15;color:#f2b952;border-color:#0d1c15}
+.call{font-size:13px;color:var(--mute)}
+.call a{color:var(--ink);font-weight:500}
+h2.sec{font-family:var(--d);font-weight:200;font-size:clamp(28px,3vw,44px);letter-spacing:-.02em;margin-bottom:22px}
+h2.sec small{display:block;font-family:var(--t);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:400}
+section.s{padding:70px 0;border-bottom:1px solid var(--line)}
+table.var{width:100%;border-collapse:collapse;font-size:14px;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+table.var th{text-align:left;font-weight:500;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);padding:14px 18px;background:var(--bg2)}
+table.var td{padding:14px 18px;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+table.var td:first-child{font-weight:500}
+table.var tr:hover td{background:rgba(242,185,82,.07)}
+table.var button{font:inherit;font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);background:none;border-radius:20px;padding:5px 10px;cursor:pointer}
+table.var button.in{background:#0d1c15;color:#f2b952;border-color:#0d1c15}
+@media(max-width:640px){table.var th:nth-child(3),table.var td:nth-child(3){display:none}}
+.specs{display:grid;gap:0;border-top:1px solid var(--line)}
+@media(min-width:800px){.specs{grid-template-columns:1fr 1fr;column-gap:50px}}
+.specs div{display:grid;grid-template-columns:180px 1fr;gap:20px;padding:14px 0;border-bottom:1px solid var(--line);font-size:14px}
+.specs dt{color:var(--dim)}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:transform .5s var(--ease),box-shadow .5s}
+.card:hover{transform:translateY(-4px);box-shadow:0 24px 50px -28px rgba(13,28,21,.35)}
+.card .im{aspect-ratio:1;background:#fff;display:grid;place-items:center;padding:14px;position:relative;overflow:hidden}
+.card .im img{max-width:100%;max-height:100%;object-fit:contain}
+.card .im.cover{padding:0}.card .im.cover img{width:100%;height:100%;object-fit:cover;max-width:none;max-height:none}
+.card .bd{padding:14px 16px 16px;border-top:1px solid var(--line)}
+.card h3{font-family:var(--d);font-weight:300;font-size:17px;line-height:1.2}
+.card .code{font-size:12px;color:var(--mute)}
+.card .ct{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.src{font-size:12px;color:var(--dim);padding:30px 0 60px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,40px);opacity:0;background:#0d1c15;color:#f7f2e7;padding:12px 18px;border-radius:30px;font-size:13px;z-index:80;transition:all .5s var(--ease)}
+.toast.on{transform:translate(-50%,0);opacity:1}
+.nf{padding:120px 0;text-align:center}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body data-page="catalog">
+<script src="assets/nav.js?v=4"></script>
+<div class="tb"><div class="wrap" id="crumb"></div></div>
+<main id="app"></main>
+<div class="toast" id="toast"></div>
+<script src="assets/products.js"></script>
+<script src="assets/texts.js"></script>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const L=(m,e)=>`<span class="mn">${m}</span><span class="en">${e}</span>`;
+const CAT={suite:['Иж бүрдэл','Suites'],konnect:['Ухаалаг гэр (Konnect)','Smart home (Konnect)'],smarttoilet:['Ухаалаг суултуур','Intelligent toilet'],toilet:['Суултуур','Toilet'],wallhung:['Ханын суултуур, товчлуур','Wall-hung toilet & plate'],smartseat:['Ухаалаг суудал','Smart seat'],seat:['Суултуурын таг','Toilet seat'],basin:['Угаалтуур','Lavatory'],faucet:['Холигч, шүршүүр','Faucet & shower'],bath:['Ванн','Bath'],showerroom:['Шүршүүрийн кабин','Shower enclosure'],furniture:['Угаалгын өрөөний тавилга','Bathroom furniture'],mirror:['Тольтой шкаф','Mirror cabinet'],artist:['Урлагийн цуглуулга','Artist Editions'],kitchen:['Гал тогоо','Kitchen'],heater:['Халаагч, агаар сэлгэгч','Bathroom heater'],towel:['Алчуур хатаагч','Towel warmer'],commercial:['Нийтийн барилга','Commercial'],floor:['Шал','Flooring']};
+const PARENT={floor:['floor','Шал','Flooring']};
+const FIN={CP:['Гялгар хром','Polished chrome','linear-gradient(135deg,#f4f6f8,#9aa3ab 55%,#e8ecef)'],BN:['Сойздсон никель','Brushed nickel','linear-gradient(135deg,#d9d4cc,#a39d93)'],BL:['Бүдэг хар','Matte black','#1d1d1d'],AF:['Францын алт','French gold','linear-gradient(135deg,#e8c77a,#b58a36)'],BV:['Сойздсон хүрэл','Brushed bronze','linear-gradient(135deg,#a67c52,#6b4a2c)'],'2MB':['Сойздсон гууль','Brushed brass','linear-gradient(135deg,#d6b06a,#9c7a35)'],RGD:['Ягаан алт','Rose gold','linear-gradient(135deg,#f1c3ae,#c58b74)'],TT:['Титан','Titanium','linear-gradient(135deg,#bfbab1,#7d786f)'],PGD:['Гялгар алт','Polished gold','linear-gradient(135deg,#ffe08a,#c99a2e)'],SN:['Сатин никель','Satin nickel','linear-gradient(135deg,#e2e0dc,#b2aea6)'],NA:['Стандарт','Standard','#e9e6df'],'0':['Цагаан','White','#fff']};
+const P=window.PRODUCTS.map((p,i)=>Object.assign(p,{id:i}));
+const TX=window.TEXTS||{};
+let Q=[];try{Q=JSON.parse(localStorage.getItem('fl-quote')||'[]')}catch(e){}
+const saveQ=()=>{try{localStorage.setItem('fl-quote',JSON.stringify(Q))}catch(e){};const n=$('#qn');if(n)n.textContent=Q.length};
+const toast=h=>{const t=$('#toast');t.innerHTML=h;t.classList.add('on');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('on'),1800)};
+const u=new URLSearchParams(location.search);const k=u.get('k');
+const p=P.find(x=>x.k.includes(k))||P[+u.get('id')];
+const name=x=>x.n=='KOHLER'?'KOHLER '+L(CAT[x.c][0],CAT[x.c][1]):x.n;
+const card=x=>`<a class="card" href="product.html?k=${encodeURIComponent(x.k[0])}"><div class="im${x.i?'':' cover'}"><img src="${x.i||(x.l?x.l.replace('assets/l/','assets/l/t/'):'assets/mark.png')}" alt="" loading="lazy"></div><div class="bd"><div class="ct">${L(CAT[x.c][0],CAT[x.c][1])}</div><h3>${name(x)}</h3><div class="code">${x.k[0]}</div></div></a>`;
+function finOf(code){const m=code.match(/-((?:[A-Z0-9]{1,3}\*?\/)+[A-Z0-9]{1,3}\*?)$/);if(m)return m[1].replace(/\*/g,'').split('/');const e=code.match(/-([A-Z0-9]{1,3})$/);return e&&FIN[e[1]]?[e[1]]:[]}
+if(!p){$('#app').innerHTML=`<div class="nf wrap"><h2 class="sec">${L('Бүтээгдэхүүн олдсонгүй','Product not found')}</h2><a class="btn solid" href="catalog.html">${L('Каталог руу буцах','Back to catalogue')}</a></div>`}
+else{
+ const t=CAT[p.c];const pg=p.s.match(/(\d+)$/);const key=(p.s.startsWith('Exq')?'ex':'fl')+(pg?pg[1]:'');
+ const pre=key.replace(/\d+$/,''),pn=+(pg?pg[1]:0);let tx=null;for(const d of [0,-1,1,-2,2,-3]){if(TX[pre+(pn+d)]){tx=TX[pre+(pn+d)];break}}
+ document.title=(p.n=='KOHLER'?'KOHLER '+t[0]:p.n)+' — '+p.k[0]+' | Fujilux Supply';
+ $('#crumb').innerHTML=`<a href="#" class="back" id="back">← ${L('Буцах','Back')}</a><i class="sep"></i><a href="index.html">${L('Нүүр','Home')}</a><span>/</span><a href="catalog.html">${L('Каталог','Catalogue')}</a><span>/</span><a href="catalog.html?cat=${p.c}${p.sub?'&sub='+p.sub:''}">${L(t[0],t[1])}</a><span>/</span><b>${p.n=='KOHLER'?p.k[0]:p.n}</b><button class="q" onclick="location.href='catalog.html#quote'">${L('Жагсаалт','Quote list')}<b id="qn">${Q.length}</b></button>`;
+ const shots=[];if(p.l)shots.push(['life',p.l]);if(p.i)shots.push(['cut',p.i]);
+ const sibs=P.filter(x=>x!==p&&x.s==p.s&&x.c==p.c);
+ sibs.slice(0,4).forEach(x=>{if(x.i&&!shots.some(s=>s[1]==x.i))shots.push(['cut',x.i])});
+ if(!shots.length)shots.push(['cut','assets/mark.png']);
+ const fins=[...new Set(p.k.flatMap(finOf))].filter(f=>FIN[f]&&f!='0');
+ const keys=[];
+ if(p.d.length)keys.push([L('Хэмжээ','Size'),p.d.find(d=>/x|×/.test(d))||p.d[0]]);
+ if(p.v.length)keys.push([L('Ус зарцуулалт','Flush'),p.v[0]]);
+ if(p.r.length)keys.push([L('Ус зайлуулах зай','Rough-in'),p.r.map(x=>x+' mm').join(' / ')]);
+ keys.push([L('Хувилбар','Variants'),p.k.length]);
+ const autoMn=`${p.b=='Kohler'?'KOHLER':'Fujilux'} ${p.n!='KOHLER'?p.n+' цувралын ':''}${t[0].toLowerCase()}. ${p.v.length?'Нэг удаагийн ус зарцуулалт '+p.v.join(', ')+'. ':''}${p.r.length?'Ус зайлуулах цэгийн зай '+p.r.map(x=>x+' mm').join(' / ')+' хувилбартай. ':''}Төслийн тоо хэмжээ, хүргэлтийн хугацаагаар үнийн санал гаргаж өгнө.`;
+ const autoEn=`${p.b=='Kohler'?'KOHLER':'Fujilux'} ${p.n!='KOHLER'?p.n+' ':''}${t[1].toLowerCase()}. ${p.v.length?'Flush volume '+p.v.join(', ')+'. ':''}${p.r.length?'Available in '+p.r.map(x=>x+' mm').join(' / ')+' rough-in. ':''}Ask us for a project quote with quantities and lead time.`;
+ const inQ=c=>Q.some(x=>x.id==p.id&&(x.code||p.k[0])==c);
+ $('#app').innerHTML=`
+ <div class="spread">
+  <div class="gal" id="gal">${shots.map((s,i)=>`<div class="sl ${s[0]}${i?'':' on'}"><img src="${s[1]}" alt=""></div>`).join('')}
+   ${p.l?`<span class="tag" id="gtag">${L('Каталогийн зураг','Catalogue photo')}</span>`:''}
+   ${shots.length>1?`<div class="th">${shots.map((s,i)=>`<button class="${s[0]}${i?'':' on'}" data-i="${i}" aria-label="photo ${i+1}"><img src="${s[1]}" alt=""></button>`).join('')}</div>`:''}</div>
+  <div class="info">
+   <div class="brandrow">${p.b=='Kohler'?'<img src="assets/kohler-d.png" alt="KOHLER">':'<span class="fb">FUJILUX</span>'}<small>${L(t[0],t[1])}</small></div>
+   <h1>${p.n=='KOHLER'?L(t[0],t[1]):p.n}</h1>
+   <div class="typ">${p.k[0]}${p.k.length>1?' · '+L(`${p.k.length} хувилбар`,`${p.k.length} variants`):''}</div>
+   <div class="lead">${tx?`<p>${L(tx.mn,tx.en||tx.mn)}</p>`:''}<p>${L(autoMn,autoEn)}</p></div>
+   ${tx?`<div class="tr">${L('Тайлбарыг KOHLER каталогоос орчуулав.','Description translated from the KOHLER catalogue.')}</div>`:''}
+   <div class="keys">${keys.map(x=>`<div><small>${x[0]}</small><b>${x[1]}</b></div>`).join('')}</div>
+   ${fins.length?`<div><small style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)">${L('Өнгөлгөө','Finishes')}</small><div class="fins" style="margin-top:10px">${fins.map(f=>`<span><i style="background:${FIN[f][2]}"></i>${L(FIN[f][0],FIN[f][1])}</span>`).join('')}</div></div>`:''}
+   <div class="acts"><button class="btn solid" id="add">${L('+ Жагсаалтад нэмэх','+ Add to quote list')}</button><a class="btn" href="index.html?q=${encodeURIComponent(p.b+' '+p.n+' '+p.k[0])}#contact">${L('Үнийн санал авах','Request a quote')} →</a></div>
+   <div class="call">${L('Шууд асуух:','Call us:')} <a href="tel:+97699999497">+976 9999 9497</a> · <a href="tel:+97691990999">+976 9199 0999</a></div>
+  </div>
+ </div>
+ <section class="s"><div class="wrap">
+  <h2 class="sec rv"><small>${L('Захиалгын кодууд','Order codes')}</small>${L('Загварын хувилбарууд','Model variants')}</h2>
+  <table class="var rv"><thead><tr><th>${L('Бараа код','Code')}</th><th>${L('Өнгөлгөө','Finish')}</th><th>${L('Хэмжээ','Size')}</th><th></th></tr></thead><tbody>
+   ${p.k.map((c,i)=>{const f=finOf(c).filter(x=>FIN[x]);return `<tr><td>${c}</td><td>${f.length?f.map(x=>L(FIN[x][0],FIN[x][1])).join(', '):'—'}</td><td>${p.d.length==p.k.length?p.d[i]:(p.d.find(d=>/x|×/.test(d))||'—')}</td><td style="text-align:right"><button data-c="${c}" class="${inQ(c)?'in':''}">${inQ(c)?L('✓ Нэмсэн','✓ Added'):L('+ Нэмэх','+ Add')}</button></td></tr>`}).join('')}
+  </tbody></table>
+ </div></section>
+ <section class="s" style="background:var(--bg2)"><div class="wrap">
+  <h2 class="sec rv"><small>${L('Техникийн мэдээлэл','Technical data')}</small>${L('Үзүүлэлт','Specifications')}</h2>
+  <dl class="specs rv">
+   <div><dt>${L('Брэнд','Brand')}</dt><dd>${p.b.toUpperCase()}</dd></div>
+   <div><dt>${L('Цуврал','Series')}</dt><dd>${p.n}</dd></div>
+   <div><dt>${L('Ангилал','Category')}</dt><dd>${L(t[0],t[1])}</dd></div>
+   ${p.d.length?`<div><dt>${L('Хэмжээ','Dimensions')}</dt><dd>${p.d.join('<br>')}</dd></div>`:''}
+   ${p.v.length?`<div><dt>${L('Ус зарцуулалт','Flush volume')}</dt><dd>${p.v.join(', ')}</dd></div>`:''}
+   ${p.r.length?`<div><dt>${L('Ус зайлуулах зай','Rough-in')}</dt><dd>${p.r.map(x=>x+' mm').join(' / ')}</dd></div>`:''}
+   ${fins.length?`<div><dt>${L('Өнгөлгөө','Finishes')}</dt><dd>${fins.map(f=>L(FIN[f][0],FIN[f][1])).join(', ')}</dd></div>`:''}
+   <div><dt>${L('Эх сурвалж','Source')}</dt><dd>${p.b=='Kohler'?'KOHLER '+p.s.replace(' · ',L(' каталог, х. ',' catalogue, p. ')):p.s}</dd></div>
+  </dl>
+ </div></section>
+ ${sibs.length?`<section class="s"><div class="wrap"><h2 class="sec rv"><small>${L('Каталогийн нэг хуудаснаас','From the same catalogue page')}</small>${L('Энэ цувралын бусад бүтээгдэхүүн','More from this collection')}</h2><div class="grid">${sibs.slice(0,8).map(card).join('')}</div></div></section>`:''}
+ <section class="s" style="background:var(--bg2)"><div class="wrap"><h2 class="sec rv"><small>${L(t[0],t[1])}</small>${L('Төстэй бүтээгдэхүүн','You may also like')}</h2><div class="grid">${P.filter(x=>x.c==p.c&&x!==p&&!sibs.includes(x)&&(x.i||x.l)).sort(()=>Math.random()-.5).slice(0,8).map(card).join('')}</div>
+  <div style="margin-top:30px"><a class="btn" href="catalog.html?cat=${p.c}">${L('Бүх '+t[0].toLowerCase()+' үзэх','See all')} →</a></div></div></section>
+ <div class="wrap src">${L('Мэдээлэл: KOHLER 2023–2024 каталог, Fujilux шалны танилцуулга. Захиалахын өмнө код, хэмжээ, өнгийг манай багтай баталгаажуулна уу.','Sources: KOHLER 2023–2024 catalogues and the Fujilux flooring presentation. Please confirm codes, sizes and finishes with our team before ordering.')}</div>`;
+ const bk=$('#back');const fromCat=document.referrer&&/catalog\.html/.test(document.referrer);
+ bk.href=fromCat?document.referrer:'catalog.html?cat='+p.c+(p.sub?'&sub='+p.sub:'');
+ bk.onclick=e=>{if(fromCat&&history.length>1){e.preventDefault();history.back()}};
+ // gallery
+ let gi=0;const go=i=>{gi=i;$$('#gal .sl').forEach((s,j)=>s.classList.toggle('on',j==i));$$('#gal .th button').forEach((b,j)=>b.classList.toggle('on',j==i));const g=$('#gtag');if(g)g.style.display=shots[i][0]=='life'?'':'none'};
+ $$('#gal .th button').forEach(b=>b.onclick=()=>go(+b.dataset.i));
+ // quote list (shared with catalogue)
+ const add=c=>{const i=Q.findIndex(x=>x.id==p.id&&(x.code||p.k[0])==c);if(i>-1)Q.splice(i,1);else{Q.push({id:p.id,qty:1,code:c});toast(L('Жагсаалтад нэмэгдлээ','Added to quote list'))}saveQ();draw()};
+ const draw=()=>{$$('table.var button').forEach(b=>{const on=inQ(b.dataset.c);b.classList.toggle('in',on);b.innerHTML=on?L('✓ Нэмсэн','✓ Added'):L('+ Нэмэх','+ Add')});const on=inQ(p.k[0]);$('#add').classList.toggle('in',on);$('#add').innerHTML=on?L('✓ Жагсаалтад байна','✓ In quote list'):L('+ Жагсаалтад нэмэх','+ Add to quote list')};
+ $('#add').onclick=()=>add(p.k[0]);$$('table.var button').forEach(b=>b.onclick=()=>add(b.dataset.c));draw();
+ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});$$('.rv').forEach(e=>io.observe(e));
+}
+function setLang(l){document.documentElement.dataset.lang=l;$$('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l==l));try{localStorage.setItem('fl-lang',l)}catch(e){}}
+$$('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));try{const s=localStorage.getItem('fl-lang');if(s)setLang(s)}catch(e){}
+</script>
+</body>
+</html>

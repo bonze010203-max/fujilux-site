@@ -1,0 +1,7 @@
+/* one step heavier than before for better legibility */
+@font-face{font-family:'FLD';src:url(fonts/InterDisplay-Light.woff) format('woff');font-weight:200;font-display:swap}
+@font-face{font-family:'FLD';src:url(fonts/InterDisplay-Regular.woff) format('woff');font-weight:300;font-display:swap}
+@font-face{font-family:'FLD';src:url(fonts/InterDisplay-Medium.woff) format('woff');font-weight:400;font-display:swap}
+@font-face{font-family:'FLT';src:url(fonts/Inter-Regular.woff) format('woff');font-weight:300;font-display:swap}
+@font-face{font-family:'FLT';src:url(fonts/Inter-Medium.woff) format('woff');font-weight:400;font-display:swap}
+@font-face{font-family:'FLT';src:url(fonts/Inter-SemiBold.woff) format('woff');font-weight:500;font-display:swap}
