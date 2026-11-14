@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="mn" data-lang="mn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0d1c15">
+<title>Нийгмийн хариуцлага — Fujilux Supply</title>
+<meta name="description" content="Fujilux Supply — Нийгмийн хариуцлага. Тун удахгүй.">
+<link rel="stylesheet" href="assets/fonts.css?v=4">
+<style>
+:root{
+  --bg:#0d1c15; --bg2:#0b1812; --panel:#12271d; --line:rgba(242,185,82,.2);
+  --gold:#e2a845; --gold2:#f2c46d; --gold3:#a86f1f; --goldL:#f2b952;
+  --ink:#f7f2e7; --mute:#cfd6d0; --dim:#a3aea6; --green:#0d1c15; --green2:#13301f;
+  --serif:'FLD','Helvetica Neue',Arial,sans-serif; --sans:'FLT','Helvetica Neue',Arial,sans-serif;
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+[data-lang=mn] .en,[data-lang=en] .mn{display:none!important}
+.wrap{width:min(1240px,100% - 32px);margin-inline:auto}
+@media(min-width:760px){.wrap{width:min(1240px,100% - 80px)}}
+/* grain */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* cursor glow */
+.glow{position:fixed;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:0;left:0;top:0;
+  background:radial-gradient(circle,rgba(195,138,44,.12),transparent 60%);transform:translate(-50%,-50%);transition:opacity .4s}
+
+.btn{display:inline-flex;align-items:center;gap:12px;padding:15px 26px;border-radius:60px;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;cursor:pointer;border:1px solid var(--gold);position:relative;overflow:hidden;transition:color .4s,transform .3s;isolation:isolate;font-family:var(--sans);color:#f7f2e7}
+.btn::before{content:"";position:absolute;inset:0;background:var(--gold);transform:translateY(101%);transition:transform .5s var(--ease);z-index:-1;border-radius:inherit}
+.btn:hover::before{transform:none}
+.btn:hover{color:#0d1c15}
+.btn.solid{background:var(--goldL);border-color:var(--goldL);color:#0d1c15}
+.btn.solid::before{background:#ffd98c}
+.btn .ar{transition:transform .4s var(--ease)}
+.btn:hover .ar{transform:translateX(4px)}
+
+/* hero banner */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:140px 0 110px;overflow:hidden}
+.slides{position:absolute;inset:0;z-index:0;will-change:transform}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.12);transition:opacity 1.8s ease,transform 8s linear}
+.slides img.on{opacity:1;transform:scale(1)}
+.hshade{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(9,21,15,.92) 0%,rgba(9,21,15,.72) 42%,rgba(9,21,15,.22) 78%),linear-gradient(180deg,rgba(9,21,15,.55),transparent 30%,transparent 70%,rgba(9,21,15,.88))}
+.hero .wrap{position:relative;z-index:2;display:block}
+.hero .wrap>div:first-child{max-width:780px}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+.hero h1{font-family:var(--serif);font-weight:200;font-size:clamp(44px,6.8vw,108px);line-height:1.02;letter-spacing:-.025em;margin:24px 0 26px}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.08em}
+.hero h1 .ln span{display:inline-block;transform:translateY(110%);transition:transform 1.3s var(--ease)}
+.hero.in h1 .ln span{transform:none}
+.hero h1 .ln:nth-child(2) span{transition-delay:.12s}
+.hero h1 em{font-style:normal!important;font-weight:300;color:transparent;background:linear-gradient(100deg,var(--gold3),var(--gold2) 40%,var(--gold) 60%,var(--gold3));background-size:220% 100%;-webkit-background-clip:text;background-clip:text;animation:sheen 6s linear infinite}
+@keyframes sheen{to{background-position:-220% 0}}
+.hero p.lead{max-width:540px;color:var(--mute);font-size:16px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start}
+.fade{opacity:0;transform:translateY(24px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.hero.in .fade{opacity:1;transform:none}
+.hero.in .fade.d1{transition-delay:.2s}.hero.in .fade.d2{transition-delay:.38s}.hero.in .fade.d3{transition-delay:.52s}
+.slidebar{position:absolute;left:0;right:0;bottom:-70px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.cap2{font-size:10px;letter-spacing:.3em;color:#f2c46d;transition:opacity .4s}
+.dots{display:flex;gap:10px}
+.dots i{width:46px;height:18px;background:rgba(247,242,231,.25);cursor:pointer;position:relative;overflow:hidden;padding:8px 0;background-clip:content-box}
+.dots i b{position:absolute;left:0;top:8px;height:2px;width:0;background:#f2b952}
+.dots i.on b{animation:prog 6.5s linear forwards}
+@keyframes prog{to{width:100%}}
+
+.fab{position:fixed;right:18px;bottom:18px;z-index:40;width:56px;height:56px;border-radius:50%;background:var(--goldL);display:grid;place-items:center;box-shadow:0 10px 30px rgba(195,138,44,.35)}
+.fab svg{width:24px;height:24px;fill:#0d1c15}
+.fab::before{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid var(--gold);animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{to{transform:scale(1.7);opacity:0}}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.fade{opacity:1;transform:none}.hero h1 .ln span{transform:none}}
+</style>
+<link rel="stylesheet" href="assets/nav.css?v=7">
+</head>
+<body>
+<div class="glow" id="glow"></div>
+
+<script src="assets/nav.js?v=5"></script>
+
+<header class="hero dark" id="csr">
+  <div class="slides" id="slides">
+    <img src="assets/img/s_still.jpg" alt="" class="on">
+    <img src="assets/img/s_city.jpg" alt="">
+    <img src="assets/img/s_brazn.jpg" alt="">
+    <img src="assets/img/s_veil.jpg" alt="">
+  </div>
+  <div class="hshade"></div>
+  <div class="wrap">
+    <div>
+      <div class="eyebrow fade d1"><span class="mn">Нийгмийн хариуцлага</span><span class="en">Social Responsibility</span></div>
+      <h1>
+        <span class="ln"><span><em class="mn">Тун удахгүй.</em><em class="en">Coming soon.</em></span></span>
+      </h1>
+      <p class="lead fade d2"><span class="mn">Fujilux Supply компанийн нийгмийн хариуцлагын хүрээнд хэрэгжүүлж буй төсөл, хөтөлбөрүүдийн мэдээлэл тун удахгүй энэ хуудсанд байршина.</span><span class="en">Information about Fujilux Supply's corporate social responsibility initiatives and community programs will be published here soon.</span></p>
+      <div class="ctas fade d3" style="margin-top:34px">
+        <a href="index.html" class="btn solid"><span class="mn">Нүүр хуудас руу буцах</span><span class="en">Back to home</span><span class="ar">→</span></a>
+        <a href="catalog.html" class="btn"><span class="mn">Каталог үзэх</span><span class="en">Browse catalogue</span></a>
+      </div>
+    </div>
+    <div class="slidebar fade d3"><div class="cap2" id="cap2">FUJILUX SUPPLY · CSR</div><div class="dots" id="dots"><i class="on"><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div></div>
+  </div>
+</header>
+
+<a class="fab" href="tel:+97699999497" aria-label="Call"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4 1-1 1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></a>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function setLang(l){
+  document.documentElement.dataset.lang=l;
+  document.documentElement.lang=l;
+  $$('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l==l));
+  try{localStorage.setItem('fl-lang',l)}catch(e){}
+}
+$$('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+try{const s=localStorage.getItem('fl-lang');if(s)setLang(s)}catch(e){}
+
+setTimeout(()=>{$('.hero').classList.add('in');startSlides()},80);
+
+const CAPS=['FUJILUX SUPPLY · CSR','KOHLER · Veil','KOHLER · Brazn','KOHLER · Veil'];
+let si=0,st;
+function show(n){
+  const im=$$('#slides img'),d=$$('#dots i');
+  im[si].classList.remove('on');d[si].classList.remove('on');
+  si=n%im.length;
+  im[si].classList.add('on');d[si].classList.add('on');
+  const c=$('#cap2');c.style.opacity=0;
+  setTimeout(()=>{c.textContent=CAPS[si];c.style.opacity=1},400);
+}
+function startSlides(){if(RM)return;clearInterval(st);st=setInterval(()=>show(si+1),6500)}
+$$('#dots i').forEach((d,i)=>d.onclick=()=>{show(i);startSlides()});
+
+if(!RM&&matchMedia('(pointer:fine)').matches){
+  addEventListener('mousemove',e=>{$('#glow').style.left=e.clientX+'px';$('#glow').style.top=e.clientY+'px'});
+} else $('#glow').style.display='none';
+</script>
+</body>
+</html>

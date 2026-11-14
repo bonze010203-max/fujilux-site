@@ -1,6 +1,6 @@
 /* Shared site header: one consistent menu for every page */
 (function(){
-const HOME=location.pathname.endsWith('catalog.html')?'index.html':'';
+const HOME=/(catalog|product|csr)\.html$/.test(location.pathname)?'index.html':'';
 const L=(m,e)=>`<span class="mn">${m}</span><span class="en">${e}</span>`;
 const C=c=>'catalog.html?cat='+c;
 const MENU={
@@ -41,6 +41,7 @@ const html=`
     <li><a class="sn-a" href="${HOME}#projects">${L('Төслүүд','Projects')}</a></li>
     <li><a class="sn-a" href="${HOME}#services">${L('Үйлчилгээ','Services')}</a></li>
     <li><a class="sn-a" href="${HOME}#about">${L('Бидний тухай','About')}</a></li>
+    <li><a class="sn-a${location.pathname.endsWith('csr.html')?' cur':''}" href="csr.html">${L('Нийгмийн хариуцлага','Social responsibility')}</a></li>
   </ul>
   <div class="sn-r">
     <a class="sn-ic" href="catalog.html#search" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></a>
@@ -58,6 +59,7 @@ const html=`
   <a class="mn-top" href="${HOME}#projects">${L('Төслүүд','Projects')}</a>
   <a class="mn-top" href="${HOME}#services">${L('Үйлчилгээ','Services')}</a>
   <a class="mn-top" href="${HOME}#about">${L('Бидний тухай','About')}</a>
+  <a class="mn-top" href="csr.html">${L('Нийгмийн хариуцлага','Social responsibility')}</a>
   <a class="mn-top" href="${HOME}#contact">${L('Холбоо барих','Contact')}</a>
   <a class="btn solid" href="${HOME}#contact" style="margin-top:20px;align-self:flex-start">${L('Үнийн санал авах','Request a quote')} →</a>
 </div></div>`;

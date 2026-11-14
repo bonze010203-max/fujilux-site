@@ -10,7 +10,7 @@
 .sn-links{display:none;list-style:none;gap:4px;margin:0 auto 0 12px;padding:0;height:100%;align-items:center}
 @media(min-width:1080px){.sn-links{display:flex}}
 .sn-links>li{height:100%;display:flex;align-items:center}
-.sn-a{display:flex;align-items:center;gap:6px;height:42px;padding:0 14px;border-radius:30px;font:inherit;font-size:13.5px;letter-spacing:.02em;color:inherit;opacity:.82;background:none;border:0;cursor:pointer;transition:opacity .25s,background .25s;text-decoration:none;position:relative}
+.sn-a{display:flex;align-items:center;gap:6px;height:42px;padding:0 12px;border-radius:30px;font:inherit;font-size:13.5px;letter-spacing:.02em;color:inherit;opacity:.82;background:none;border:0;cursor:pointer;transition:opacity .25s,background .25s;text-decoration:none;position:relative;white-space:nowrap}
 .sn-a:hover,.has-mm.open .sn-a,.sn-a.cur{opacity:1;background:rgba(242,185,82,.14)}
 .sn-a svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:1.5;transition:transform .3s}
 .has-mm.open .sn-a svg{transform:rotate(180deg)}
