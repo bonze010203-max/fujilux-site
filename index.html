@@ -252,9 +252,13 @@ section{position:relative;padding:clamp(90px,13vw,170px) 0}
 .cinfo .cico svg{width:18px;height:18px;fill:var(--gold)}
 .cinfo .it .ctxt{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px}
 .cinfo .it a,.cinfo .it p{font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.5;color:var(--ink);transition:color .3s}
+.cinfo .it .hl{color:var(--gold2);font-weight:400}
+.cinfo .it .sub{color:var(--mute)}
+.cinfo .it .gsh{color:transparent;background:linear-gradient(100deg,var(--gold3),var(--gold2) 40%,#fff3d1 50%,var(--gold) 60%,var(--gold3));background-size:220% 100%;-webkit-background-clip:text;background-clip:text;animation:sheen 6s linear infinite;font-weight:400}
 .cinfo .it a:hover{color:transparent;background:linear-gradient(100deg,var(--gold3),var(--gold2) 40%,#fff3d1 50%,var(--gold) 60%,var(--gold3));background-size:220% 100%;-webkit-background-clip:text;background-clip:text;animation:sheen 6s linear infinite}
-.cinfo .it .sep{color:var(--gold);opacity:.5;font-size:14px}
-.cinfo .it small{display:block;width:100%;margin-top:2px;font-family:var(--sans);font-size:12.5px;color:var(--dim);line-height:1.4}
+.cinfo .it .sep{color:var(--gold);opacity:.65;font-size:14px}
+.cinfo .it small{display:block;width:100%;margin-top:4px;font-family:var(--sans);font-size:13px;color:var(--dim);line-height:1.45}
+.fld label i{font-style:normal;color:var(--gold2)}
 .soc{display:flex;gap:26px;flex-wrap:wrap;padding-top:24px}
 .soc a{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);display:inline-flex;align-items:center;gap:8px;transition:color .3s}
 .soc a:hover{color:var(--gold2)}
@@ -827,26 +831,26 @@ h1,h2,h3,h4,.quote,.stat b,.wm,.adv b{font-family:var(--serif)}
       <div class="it">
         <span class="cico" aria-label="Phone"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></span>
         <div class="ctxt">
-          <a href="tel:+97699999497">+976 9999 9497</a>
+          <a href="tel:+97699999497"><span class="sub">+976</span> <span class="hl">9999 9497</span></a>
           <span class="sep">·</span>
-          <a href="tel:+97691990999">+976 9199 0999</a>
+          <a href="tel:+97691990999"><span class="sub">+976</span> <span class="hl">9199 0999</span></a>
         </div>
       </div>
       <div class="it">
         <span class="cico" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
-        <div class="ctxt"><a href="mailto:info@fujilux.llc">info@fujilux.llc</a></div>
+        <div class="ctxt"><a href="mailto:info@fujilux.llc">info@<span class="hl">fujilux.llc</span></a></div>
       </div>
       <div class="it">
         <span class="cico" aria-label="Office"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg></span>
         <div class="ctxt">
-          <p><span class="mn">Сүхбаатар дүүрэг, 2-р хороо, 5-р хороолол, Усны 1А, 19 тоот, Улаанбаатар</span><span class="en">Usnii 1A, Office 19, 5th Khoroolol, 2nd Khoroo, Sukhbaatar District, Ulaanbaatar</span></p>
+          <p><span class="mn"><span class="sub">Сүхбаатар дүүрэг, 2-р хороо, 5-р хороолол,</span> <span class="hl">Усны 1А, 19 тоот</span><span class="sub">, Улаанбаатар</span></span><span class="en"><span class="hl">Usnii 1A, Office 19</span><span class="sub">, 5th Khoroolol, 2nd Khoroo, Sukhbaatar District, Ulaanbaatar</span></span></p>
         </div>
       </div>
       <div class="it">
         <span class="cico" aria-label="Hours"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 10.4l3.3 1.9-.8 1.3L11 13V7h1.5v5.4z"/></svg></span>
         <div class="ctxt">
-          <p><span class="mn">Даваа – Баасан · 09:00 – 18:00</span><span class="en">Monday – Friday · 09:00 – 18:00</span></p>
-          <small><span class="mn">5 тэрбум ₮ хүртэл · 100% бартер болон төслийн уулзалт</span><span class="en">Up to MNT 5B · 100% barter & private project consultations</span></small>
+          <p><span class="mn">Даваа – Баасан · <span class="hl">09:00 – 18:00</span></span><span class="en">Monday – Friday · <span class="hl">09:00 – 18:00</span></span></p>
+          <small><span class="mn"><span class="gsh">5 тэрбум ₮ хүртэл · 100% бартер</span> болон төслийн уулзалт</span><span class="en"><span class="gsh">Up to MNT 5B · 100% barter</span> & private project consultations</span></small>
         </div>
       </div>
       <div class="soc">
@@ -857,8 +861,8 @@ h1,h2,h3,h4,.quote,.stat b,.wm,.adv b{font-family:var(--serif)}
     </div>
     <form class="rv" id="form" onsubmit="return send(event)">
       <div class="f2">
-        <div class="fld"><input id="n" required placeholder=" "><label for="n"><span class="mn">Нэр *</span><span class="en">Name *</span></label></div>
-        <div class="fld"><input id="e" type="email" required placeholder=" "><label for="e"><span class="mn">Имэйл *</span><span class="en">Email *</span></label></div>
+        <div class="fld"><input id="n" required placeholder=" "><label for="n"><span class="mn">Нэр <i>*</i></span><span class="en">Name <i>*</i></span></label></div>
+        <div class="fld"><input id="e" type="email" required placeholder=" "><label for="e"><span class="mn">Имэйл <i>*</i></span><span class="en">Email <i>*</i></span></label></div>
         <div class="fld"><input id="ph" type="tel" placeholder=" "><label for="ph"><span class="mn">Утас</span><span class="en">Phone</span></label></div>
         <div class="fld"><input id="co" placeholder=" "><label for="co"><span class="mn">Байгууллага</span><span class="en">Company</span></label></div>
       </div>
@@ -868,11 +872,11 @@ h1,h2,h3,h4,.quote,.stat b,.wm,.adv b{font-family:var(--serif)}
         <option data-mn="Модон / шахмал шал" data-en="Wood / laminate flooring">Модон / шахмал шал</option>
         <option data-mn="Байгалийн ба хиймэл чулуу, плита" data-en="Stone and tiles">Байгалийн ба хиймэл чулуу, плита</option>
         <option data-mn="Бусад бараа материал" data-en="Other materials">Бусад бараа материал</option>
-      </select><label for="sv"><span class="mn">Сонирхож буй бүтээгдэхүүн *</span><span class="en">Product of interest *</span></label></div>
-      <div class="fld"><textarea id="msg" required placeholder=" "></textarea><label for="msg"><span class="mn">Төсөл, бараа код, тоо хэмжээ *</span><span class="en">Project, product codes, quantity *</span></label></div>
+      </select><label for="sv"><span class="mn">Сонирхож буй бүтээгдэхүүн <i>*</i></span><span class="en">Product of interest <i>*</i></span></label></div>
+      <div class="fld"><textarea id="msg" required placeholder=" "></textarea><label for="msg"><span class="mn">Төсөл, бараа код, тоо хэмжээ <i>*</i></span><span class="en">Project, product codes, quantity <i>*</i></span></label></div>
       <div class="cf-foot">
         <button class="btn solid" type="submit"><span class="mn">Хүсэлт илгээх</span><span class="en">Send inquiry</span><span class="ar">→</span></button>
-        <span class="cf-note"><span class="mn">Ажлын 24 цагийн дотор эргэн холбогдоно</span><span class="en">Response within 24 business hours</span></span>
+        <span class="cf-note"><span class="mn">Ажлын <span style="color:var(--gold2)">24 цагийн</span> дотор эргэн холбогдоно</span><span class="en">Response within <span style="color:var(--gold2)">24 business hours</span></span></span>
       </div>
       <p class="sent" id="sent"><span class="mn">Баярлалаа. Бид удахгүй холбогдоно.</span><span class="en">Thank you. We'll be in touch shortly.</span></p>
     </form>
