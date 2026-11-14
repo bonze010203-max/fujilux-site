@@ -74,10 +74,6 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .nav-cta{display:none}
 .burger{width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:none;display:grid;place-items:center;cursor:pointer}
 .burger span{width:16px;height:1px;background:var(--ink);display:block;box-shadow:0 5px 0 var(--ink),0 -5px 0 var(--ink)}
-.mnav{position:fixed;inset:0;background:var(--bg);z-index:49;display:flex;flex-direction:column;justify-content:center;padding:0 28px;gap:10px;clip-path:circle(0 at calc(100% - 40px) 40px);transition:clip-path .8s var(--ease)}
-.mnav.open{clip-path:circle(150% at calc(100% - 40px) 40px)}
-.mnav a{font-family:var(--serif);font-size:42px;font-weight:300}
-.mnav a i{font-family:var(--sans);font-style:normal;font-size:11px;color:var(--gold);margin-right:14px;vertical-align:middle}
 @media(min-width:1080px){.links{display:flex}.nav-cta{display:inline-flex}.burger{display:none}}
 
 /* hero */
@@ -533,7 +529,7 @@ h1,h2,h3,h4,.quote,.stat b,.wm,.adv b{font-family:var(--serif)}
 .fc h4,.val h4,.step h4,.ctile h3,.sc .cap b,.st h3,.cinfo .it a,.cinfo .it p,.faq summary,.asbar .wm2{font-weight:300;letter-spacing:-.01em}
 .lb .tx h3{font-weight:200;letter-spacing:-.02em}
 .step h4{font-size:28px}.val h4{font-size:24px}.fc h4{font-size:22px}.ctile h3{font-size:clamp(22px,2.2vw,32px)}
-.cinfo .it a,.cinfo .it p{font-size:20px}.faq summary{font-size:clamp(18px,2vw,24px)}
+.faq summary{font-size:clamp(18px,2vw,24px)}
 .asbar .wm2{letter-spacing:.24em;font-size:22px}
 .eyebrow,.num,.k,small,.grp,.cl,h5,h6{font-family:var(--sans)}
 .marq span{font-family:var(--serif);font-weight:200;letter-spacing:.02em}
@@ -584,14 +580,14 @@ h1,h2,h3,h4,.quote,.stat b,.wm,.adv b{font-family:var(--serif)}
 .cat2 .ctile .bg img{object-position:center}
 .hero .ctas .btn:not(.solid){color:#f7f2e7}
 </style>
-<link rel="stylesheet" href="assets/nav.css?v=7">
+<link rel="stylesheet" href="assets/nav.css?v=8">
 </head>
 <body>
 <div class="loader dark hex" id="loader"><div class="lsheen"></div></div>
 <div class="progress" id="prog"></div>
 <div class="glow" id="glow"></div>
 
-<script src="assets/nav.js?v=5"></script>
+<script src="assets/nav.js?v=6"></script>
 
 <!-- HERO -->
 <header class="hero dark" id="home">

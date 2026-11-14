@@ -51,7 +51,7 @@ const html=`
   </div>
 </div></nav>
 <div class="mnav" id="mnav"><div class="mnav-in">
-  <details open><summary>${L('Бүтээгдэхүүн','Products')}</summary>
+  <details><summary>${L('Бүтээгдэхүүн','Products')}</summary>
     <a class="mn-all" href="catalog.html">${L('Бүрэн каталог','Full catalogue')} →</a>
     ${['bath','floor','more'].map(k=>`<h6>${L(...MENU[k].t)}</h6>`+MENU[k].items.map(i=>`<a href="${href(i[0])}">${L(i[1],i[2])}</a>`).join('')).join('')}
   </details>
