@@ -246,31 +246,64 @@ section{position:relative;padding:clamp(90px,13vw,170px) 0}
 .faq details p{color:var(--mute);margin-top:14px;max-width:70ch}
 
 /* contact */
-.cbox{display:grid;gap:50px}
-@media(min-width:960px){.cbox{grid-template-columns:1fr 1.15fr;gap:80px}}
-.cinfo{display:grid;gap:28px;align-content:start}
-.cinfo .it h6{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:6px}
-.cinfo .it a,.cinfo .it p{font-family:var(--serif);font-size:24px;line-height:1.3;display:block}
-.cinfo .it a:hover{color:var(--gold2)}
-.soc{display:flex;gap:10px;flex-wrap:wrap}
-.soc a{border:1px solid var(--line);border-radius:40px;padding:10px 16px;font-size:12px;letter-spacing:.08em;display:flex;align-items:center;gap:8px;transition:border-color .3s,background .3s}
-.soc a:hover{border-color:var(--gold);background:rgba(195,138,44,.08)}
-.soc a svg{width:16px;height:16px;fill:var(--gold)}
-form{display:grid;gap:20px;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:clamp(24px,4vw,44px)}
-.f2{display:grid;gap:20px}
+#contact{position:relative;overflow:hidden}
+#contact::before{content:"";position:absolute;right:-180px;top:-180px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(195,138,44,.09),transparent 68%);pointer-events:none}
+.cbox{display:grid;gap:44px;align-items:start}
+@media(min-width:980px){.cbox{grid-template-columns:1.02fr 1.18fr;gap:64px}}
+.cinfo{display:grid;gap:20px;align-content:start}
+.cgrid{display:grid;gap:16px}
+@media(min-width:560px){.cgrid{grid-template-columns:1fr 1fr}}
+.cit{background:var(--panel);border:1px solid rgba(195,138,44,.22);border-radius:10px;padding:24px 22px;position:relative;overflow:hidden;transition:border-color .35s var(--ease),transform .35s var(--ease),box-shadow .35s var(--ease)}
+.cit::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(242,185,82,.65),transparent);opacity:0;transition:opacity .35s}
+.cit:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 16px 38px rgba(13,28,21,.07)}
+.cit:hover::before{opacity:1}
+.cit.wide{grid-column:1/-1}
+.cit-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.cit h6{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold2);font-weight:600;margin:0}
+.cico{width:34px;height:34px;border-radius:50%;border:1px solid rgba(195,138,44,.32);background:rgba(195,138,44,.07);display:grid;place-items:center;flex-shrink:0}
+.cico svg{width:15px;height:15px;fill:var(--gold2)}
+.cit a,.cit p{font-family:var(--serif);font-size:clamp(20px,2vw,24px);line-height:1.32;display:block;color:var(--ink);transition:color .3s}
+.cit a+a{margin-top:4px}
+.cit a:hover{color:var(--gold2)}
+.cit small{display:block;margin-top:8px;font-family:var(--sans);font-size:12px;color:var(--dim);letter-spacing:.04em}
+.cvip{display:flex;align-items:center;gap:16px;padding:20px 22px;border-radius:10px;background:linear-gradient(135deg,#0d1c15 0%,#163524 100%);border:1px solid rgba(242,185,82,.35);color:#f7f2e7;box-shadow:0 16px 36px rgba(13,28,21,.12)}
+.cvip-badge{width:42px;height:42px;border-radius:50%;background:rgba(242,185,82,.14);border:1px solid rgba(242,185,82,.45);display:grid;place-items:center;flex-shrink:0;color:var(--goldL);font-family:var(--serif);font-size:17px}
+.cvip b{display:block;font-family:var(--serif);font-weight:400;font-size:19px;color:var(--goldL);line-height:1.2;margin-bottom:3px}
+.cvip span{font-size:12.5px;color:#cfd6d0;line-height:1.45;display:block}
+.soc{display:flex;gap:10px;flex-wrap:wrap;padding-top:4px}
+.soc a{background:var(--panel);border:1px solid rgba(195,138,44,.28);border-radius:40px;padding:11px 18px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;display:inline-flex;align-items:center;gap:9px;transition:all .3s var(--ease)}
+.soc a:hover{border-color:var(--gold);background:#0d1c15;color:#f7f2e7;transform:translateY(-2px)}
+.soc a svg{width:15px;height:15px;fill:var(--gold);transition:transform .3s}
+.soc a:hover svg{fill:var(--goldL);transform:scale(1.1)}
+form.cform{display:grid;gap:24px;border:1px solid rgba(242,185,82,.32);border-radius:14px;padding:clamp(28px,4.5vw,50px);position:relative;overflow:hidden;box-shadow:0 28px 70px rgba(13,28,21,.22)}
+form.cform::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#8a5a17,#f2b952 50%,#8a5a17)}
+.cf-head{border-bottom:1px solid rgba(242,185,82,.18);padding-bottom:20px;margin-bottom:2px}
+.cf-head .eyebrow{font-size:10px;letter-spacing:.3em;margin-bottom:8px}
+.cf-head h3{font-family:var(--serif);font-weight:300;font-size:clamp(26px,3vw,36px);line-height:1.15;color:#f7f2e7}
+.cf-head h3 em{font-style:italic;color:var(--goldL)}
+.f2{display:grid;gap:22px}
 @media(min-width:620px){.f2{grid-template-columns:1fr 1fr}}
 .fld{position:relative}
-.fld input,.fld select,.fld textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--ink);font:inherit;font-size:15px;padding:22px 0 10px;outline:none;transition:border-color .3s;border-radius:0;-webkit-appearance:none;appearance:none}
-.fld select option{background:var(--panel)}
+.fld input,.fld select,.fld textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(242,185,82,.24);color:var(--ink);font:inherit;font-size:15px;padding:24px 0 11px;outline:none;transition:border-color .3s,background .3s;border-radius:0;-webkit-appearance:none;appearance:none}
+.fld select{padding-right:28px;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23f2b952' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px bottom 16px}
+.fld select option{background:#0d1c15;color:#f7f2e7}
 .fld textarea{min-height:110px;resize:vertical}
-.fld label{position:absolute;left:0;top:22px;font-size:14px;color:var(--dim);pointer-events:none;transition:all .3s var(--ease)}
-.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--gold)}
-.fld input:focus+label,.fld input:not(:placeholder-shown)+label,.fld textarea:focus+label,.fld textarea:not(:placeholder-shown)+label,.fld select+label{top:0;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-.map{margin-top:70px;border:1px solid var(--line);border-radius:4px;overflow:hidden;height:380px;position:relative}
-.map iframe{width:100%;height:100%;border:0;filter:grayscale(.9) sepia(.2) contrast(.95)}
-.map .pin{position:absolute;left:20px;bottom:20px;border:1px solid var(--line);padding:16px 20px;border-radius:4px;font-size:13px;max-width:320px;backdrop-filter:blur(8px)}
-.map .pin b{font-family:var(--serif);font-size:20px;font-weight:400;display:block;color:var(--gold2)}
-.sent{display:none;color:var(--gold2);font-family:var(--serif);font-size:22px}
+.fld label{position:absolute;left:0;top:24px;font-size:14px;color:var(--dim);pointer-events:none;transition:all .3s var(--ease)}
+.fld::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--goldL);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.fld:focus-within::after{transform:scaleX(1)}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:transparent}
+.fld input:focus+label,.fld input:not(:placeholder-shown)+label,.fld textarea:focus+label,.fld textarea:not(:placeholder-shown)+label,.fld select+label{top:0;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--goldL);font-weight:500}
+.cf-foot{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:6px}
+.cf-note{font-size:12px;color:var(--dim);display:inline-flex;align-items:center;gap:8px}
+.cf-note i{width:7px;height:7px;border-radius:50%;background:var(--goldL);box-shadow:0 0 10px var(--goldL);display:inline-block}
+.map{margin-top:64px;border:1px solid rgba(195,138,44,.32);border-radius:14px;overflow:hidden;height:400px;position:relative;box-shadow:0 22px 50px rgba(13,28,21,.1)}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.85) sepia(.18) contrast(.98)}
+.map .pin{position:absolute;left:24px;bottom:24px;border:1px solid rgba(242,185,82,.38);padding:20px 24px;border-radius:10px;font-size:13px;max-width:350px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 18px 40px rgba(0,0,0,.38)}
+.map .pin small{display:block;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--goldL);margin-bottom:4px}
+.map .pin b{font-family:var(--serif);font-size:22px;font-weight:400;display:block;color:#f7f2e7;margin-bottom:4px}
+.map .pin a{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:7px 14px;border-radius:30px;border:1px solid rgba(242,185,82,.35);background:rgba(242,185,82,.1);color:var(--goldL);font-size:11px;letter-spacing:.14em;text-transform:uppercase;transition:background .3s,color .3s}
+.map .pin a:hover{background:var(--goldL);color:#0d1c15}
+.sent{display:none;color:var(--goldL);font-family:var(--serif);font-size:22px;padding:14px 18px;border:1px solid rgba(242,185,82,.35);border-radius:8px;background:rgba(242,185,82,.08)}
 
 /* cta band */
 .band{text-align:center;padding:clamp(90px,12vw,160px) 0;border-top:1px solid var(--line);overflow:hidden;position:relative}
@@ -818,22 +851,51 @@ h1,h2,h3,h4,.quote,.stat b,.wm,.adv b{font-family:var(--serif)}
     <p><span class="mn">Төсөлд тань юу хэрэгтэйг бичээрэй. Манай баг тодорхой дараагийн алхмаар хариу өгнө.</span><span class="en">Tell us what your project needs. Our team responds with a clear next step.</span></p></div>
   <div class="cbox">
     <div class="cinfo rv">
-      <div class="it"><h6><span class="mn">Утас</span><span class="en">Phone</span></h6><a href="tel:+97699999497">+976 9999 9497</a><a href="tel:+97691990999">+976 9199 0999</a></div>
-      <div class="it"><h6><span class="mn">Имэйл</span><span class="en">Email</span></h6><a href="mailto:info@fujilux.llc">info@fujilux.llc</a></div>
-      <div class="it"><h6><span class="mn">Хаяг</span><span class="en">Office</span></h6><p><span class="mn">Сүхбаатар дүүрэг, 2-р хороо, 5-р хороолол, Усны 1А, 19 тоот, Улаанбаатар</span><span class="en">Usnii 1A, Office 19, 5th Khoroolol, 2nd Khoroo, Sukhbaatar District, Ulaanbaatar</span></p></div>
-      <div class="it"><h6><span class="mn">Цагийн хуваарь</span><span class="en">Hours</span></h6><p class="ph"><span class="mn">Даваа–Баасан 09:00–18:00</span><span class="en">Mon–Fri 09:00–18:00</span></p></div>
+      <div class="cgrid">
+        <div class="cit">
+          <div class="cit-top"><h6>01 · <span class="mn">Шууд холбогдох</span><span class="en">Direct Line</span></h6><span class="cico"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></span></div>
+          <a href="tel:+97699999497">+976 9999 9497</a>
+          <a href="tel:+97691990999">+976 9199 0999</a>
+          <small><span class="mn">Төслийн зөвлөх · B2B борлуулалт</span><span class="en">Project advisor · B2B supply</span></small>
+        </div>
+        <div class="cit">
+          <div class="cit-top"><h6>02 · <span class="mn">Албан имэйл</span><span class="en">Official Email</span></h6><span class="cico"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span></div>
+          <a href="mailto:info@fujilux.llc">info@fujilux.llc</a>
+          <small><span class="mn">BOQ болон техникийн зураг хүлээн авна</span><span class="en">Send your BOQ & specifications</span></small>
+        </div>
+        <div class="cit wide">
+          <div class="cit-top"><h6>03 · <span class="mn">Төв оффис & Үзүүлэнгийн танхим</span><span class="en">Head Office & Private Showroom</span></h6><span class="cico"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg></span></div>
+          <p><span class="mn">Сүхбаатар дүүрэг, 2-р хороо, 5-р хороолол, Усны 1А, 19 тоот, Улаанбаатар</span><span class="en">Usnii 1A, Office 19, 5th Khoroolol, 2nd Khoroo, Sukhbaatar District, Ulaanbaatar</span></p>
+        </div>
+        <div class="cit wide">
+          <div class="cit-top"><h6>04 · <span class="mn">Ажиллах цагийн хуваарь</span><span class="en">Business Hours</span></h6><span class="cico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 10.4l3.3 1.9-.8 1.3L11 13V7h1.5v5.4z"/></svg></span></div>
+          <p><span class="mn">Даваа – Баасан · 09:00 – 18:00</span><span class="en">Monday – Friday · 09:00 – 18:00</span></p>
+          <small><span class="mn">Урьдчилан цаг товлож VIP уулзалт хийх боломжтой</span><span class="en">Private project consultations available by appointment</span></small>
+        </div>
+      </div>
+      <div class="cvip">
+        <div class="cvip-badge">₮</div>
+        <div>
+          <b><span class="mn">5 тэрбум ₮ хүртэл · 100% Бартер нөхцөл</span><span class="en">Up to MNT 5 Billion · 100% Barter Terms</span></b>
+          <span><span class="mn">Барилгын төслийн онцлогт нийцсэн төлбөрийн уян хатан графикийг ганцаарчлан тохиролцоно.</span><span class="en">Tailored barter & supply schedules structured around your development milestones.</span></span>
+        </div>
+      </div>
       <div class="soc">
-        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h2V2h-3c-3 0-4 2-4 4v2H8v3h2v11h4V11h3l.5-3z"/></svg>Facebook</a>
-        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm5-9.5a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4zM16 2H8a6 6 0 00-6 6v8a6 6 0 006 6h8a6 6 0 006-6V8a6 6 0 00-6-6zm4 14a4 4 0 01-4 4H8a4 4 0 01-4-4V8a4 4 0 014-4h8a4 4 0 014 4z"/></svg>Instagram</a>
+        <a href="https://www.facebook.com/share/1EdCbseKLP/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h2V2h-3c-3 0-4 2-4 4v2H8v3h2v11h4V11h3l.5-3z"/></svg>Facebook</a>
+        <a href="mailto:info@fujilux.llc" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>info@fujilux.llc</a>
         <a href="viber://chat?number=%2B97699999497" aria-label="Viber"><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 3 4.5 3 10.5c0 3.3 1.2 5.6 3.5 6.9V21l3.2-2.6c.8.1 1.5.1 2.3.1 5.5 0 9-2.5 9-8S17.5 2 12 2zm3.8 12.3c-.4.6-1.3 1-2 .8-2.6-.8-4.8-3-5.6-5.6-.2-.7.2-1.6.8-2l.6-.4c.3-.2.8-.1 1 .2l.9 1.4c.2.3.1.7-.1 1l-.4.4c.4 1.2 1.3 2.1 2.5 2.5l.4-.4c.3-.2.7-.3 1-.1l1.4.9c.3.2.4.7.2 1z"/></svg>Viber</a>
       </div>
     </div>
-    <form class="rv" id="form" onsubmit="return send(event)">
+    <form class="cform dark hex rv" id="form" onsubmit="return send(event)">
+      <div class="cf-head">
+        <div class="eyebrow"><span class="mn">ТӨСЛИЙН ХҮСЭЛТ · BOQ & БАРТЕР</span><span class="en">PROJECT INQUIRY · BOQ & BARTER</span></div>
+        <h3><span class="mn">Тусгай <em>үнийн санал</em> авах</span><span class="en">Request a <em>bespoke</em> proposal</span></h3>
+      </div>
       <div class="f2">
         <div class="fld"><input id="n" required placeholder=" "><label for="n"><span class="mn">Нэр *</span><span class="en">Name *</span></label></div>
         <div class="fld"><input id="e" type="email" required placeholder=" "><label for="e"><span class="mn">Имэйл *</span><span class="en">Email *</span></label></div>
         <div class="fld"><input id="ph" type="tel" placeholder=" "><label for="ph"><span class="mn">Утас</span><span class="en">Phone</span></label></div>
-        <div class="fld"><input id="co" placeholder=" "><label for="co"><span class="mn">Байгууллага</span><span class="en">Company</span></label></div>
+        <div class="fld"><input id="co" placeholder=" "><label for="co"><span class="mn">Байгууллага / Төслийн нэр</span><span class="en">Company / Project Name</span></label></div>
       </div>
       <div class="fld"><select id="sv" required>
         <option value="" data-mn="— Сонгох —" data-en="— Select —">— Сонгох —</option>
@@ -843,13 +905,21 @@ h1,h2,h3,h4,.quote,.stat b,.wm,.adv b{font-family:var(--serif)}
         <option data-mn="Бусад бараа материал" data-en="Other materials">Бусад бараа материал</option>
       </select><label for="sv"><span class="mn">Сонирхож буй бүтээгдэхүүн *</span><span class="en">Product of interest *</span></label></div>
       <div class="fld"><textarea id="msg" required placeholder=" "></textarea><label for="msg"><span class="mn">Төсөл, бараа код, тоо хэмжээ *</span><span class="en">Project, product codes, quantity *</span></label></div>
-      <div><button class="btn solid" type="submit"><span class="mn">Хүсэлт илгээх</span><span class="en">Send inquiry</span><span class="ar">→</span></button></div>
+      <div class="cf-foot">
+        <button class="btn solid" type="submit"><span class="mn">Хүсэлт илгээх</span><span class="en">Send inquiry</span><span class="ar">→</span></button>
+        <span class="cf-note"><i></i><span class="mn">Ажлын 24 цагийн дотор эргэн холбогдоно</span><span class="en">Response within 24 business hours</span></span>
+      </div>
       <p class="sent" id="sent"><span class="mn">Баярлалаа. Бид удахгүй холбогдоно.</span><span class="en">Thank you. We'll be in touch shortly.</span></p>
     </form>
   </div>
   <div class="map rv">
     <iframe loading="lazy" title="Map" src="https://www.google.com/maps?q=Usnii+1A,+Sukhbaatar,+Ulaanbaatar,+Mongolia&output=embed"></iframe>
-    <div class="pin dark" style="background:rgba(13,28,21,.92)"><b>Fujilux Supply</b><span class="mn">Усны 1А, 19 тоот · Улаанбаатар</span><span class="en">Usnii 1A, Office 19 · Ulaanbaatar</span><br><a href="https://maps.google.com/?q=Usnii+1A+Office+19+Ulaanbaatar+Mongolia" target="_blank" rel="noopener" style="color:var(--gold);font-size:12px;letter-spacing:.1em"><span class="mn">Google Maps-д нээх →</span><span class="en">Open in Google Maps →</span></a></div>
+    <div class="pin dark" style="background:rgba(13,28,21,.92)">
+      <small>FUJILUX SUPPLY · ULAANBAATAR</small>
+      <b><span class="mn">Төв оффис</span><span class="en">Headquarters</span></b>
+      <span class="mn">Сүхбаатар дүүрэг, Усны 1А, 19 тоот</span><span class="en">Usnii 1A, Office 19 · Sukhbaatar District</span><br>
+      <a href="https://maps.google.com/?q=Usnii+1A+Office+19+Ulaanbaatar+Mongolia" target="_blank" rel="noopener"><span class="mn">Google Maps-д нээх →</span><span class="en">Open in Google Maps →</span></a>
+    </div>
   </div>
 </div></section>
 
