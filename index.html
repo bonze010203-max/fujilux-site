@@ -365,16 +365,27 @@ nav.solid .lgo.l{display:block}
 .cat .ic *{stroke:var(--gold);fill:none;stroke-width:1.2}
 .cat h3{font-family:var(--serif);font-weight:400;font-size:24px;margin-top:26px;line-height:1.15}
 .cat p{font-size:13px;color:var(--mute);margin-top:6px}
-/* projects list */
-.plist{border-top:1px solid var(--line)}
-.prow{display:grid;grid-template-columns:44px 1fr;gap:14px 20px;padding:30px 0;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
-.prow::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(242,185,82,.1),transparent 70%);transform:scaleX(0);transform-origin:left;transition:transform .8s var(--ease);pointer-events:none}
-.prow:hover::before{transform:none}
-.prow .n{font-size:12px;color:var(--gold);letter-spacing:.2em;padding-top:12px}
-.prow h3{font-family:var(--serif);font-weight:300;font-size:clamp(28px,3.6vw,52px);line-height:1.05;transition:transform .6s var(--ease)}
-.prow:hover h3{transform:translateX(10px)}
-.prow .cl{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);grid-column:2}
-@media(min-width:900px){.prow{grid-template-columns:60px 1.6fr 1fr;align-items:center}.prow .cl{grid-column:auto;text-align:right}}
+/* projects list & cards */
+.pgrid{display:grid;gap:24px;grid-template-columns:1fr}
+@media(min-width:720px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1080px){.pgrid{grid-template-columns:repeat(6,1fr)}.pgrid .pcard{grid-column:span 2}.pgrid .pcard:nth-child(1),.pgrid .pcard:nth-child(2){grid-column:span 3}}
+.pcard{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel);transition:transform .6s var(--ease),box-shadow .6s,border-color .4s;text-decoration:none;color:inherit}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 30px 60px -28px rgba(13,28,21,.28);border-color:var(--gold)}
+.pcard-media{position:relative;aspect-ratio:16/9;overflow:hidden;background:#0d1c15}
+.pcard-media .pbg{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.4s var(--ease)}
+.pcard:hover .pcard-media .pbg{transform:scale(1.06)}
+.pcard-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,28,21,.15) 0%,transparent 40%,rgba(13,28,21,.75) 100%);pointer-events:none}
+.pcard-num{position:absolute;top:14px;left:14px;z-index:2;font-size:11px;letter-spacing:.22em;background:rgba(13,28,21,.82);color:#f2c46d;border:1px solid rgba(242,185,82,.35);padding:5px 11px;border-radius:20px;backdrop-filter:blur(6px)}
+.pcard-logo{position:absolute;bottom:14px;left:16px;z-index:2;width:62px;height:62px;border-radius:50%;overflow:hidden;border:2px solid #f2b952;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.45);display:grid;place-items:center}
+.pcard-logo img{width:100%;height:100%;object-fit:cover;display:block}
+.pcard-fb-badge{position:absolute;bottom:14px;right:14px;z-index:2;display:inline-flex;align-items:center;gap:7px;background:rgba(13,28,21,.84);color:#f7f2e7;border:1px solid rgba(242,185,82,.4);padding:7px 13px;border-radius:30px;font-size:11px;letter-spacing:.08em;backdrop-filter:blur(6px);transition:background .3s,color .3s,border-color .3s}
+.pcard-fb-badge svg{width:14px;height:14px;fill:#f2b952;transition:fill .3s}
+.pcard:hover .pcard-fb-badge{background:#f2b952;color:#0d1c15;border-color:#f2b952;font-weight:500}
+.pcard:hover .pcard-fb-badge svg{fill:#0d1c15}
+.pcard-bd{padding:20px 22px 22px;display:flex;flex-direction:column;gap:6px;flex:1}
+.pcard-cl{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);font-weight:500}
+.pcard-bd h3{font-family:var(--serif);font-weight:300;font-size:clamp(20px,2vw,26px);line-height:1.2;letter-spacing:-.01em;color:var(--ink);transition:color .3s}
+.pcard:hover .pcard-bd h3{color:var(--gold2)}
 /* ===== v3 additions ===== */
 .hero .wrap{display:grid;gap:50px;align-items:end}
 @media(min-width:1080px){.hero .wrap{grid-template-columns:1.25fr 1fr}.badge{display:none!important}}
@@ -671,14 +682,69 @@ h1,h2,h3,h4,.quote,.stat b,.wm,.adv b{font-family:var(--serif)}
   <div class="sh rv">
     <div><div class="num">05 — <span class="mn">Төслүүд</span><span class="en">Projects</span></div>
     <h2 style="margin-top:22px"><span class="mn">Хамтран <em>бүтээсэн</em> төслүүд.</span><span class="en">Projects we <em>build</em> with.</span></h2></div>
-    <p><span class="mn">Монголын тэргүүлэх барилгын компаниудтай хамтран гүйцэтгэсэн болон гүйцэтгэж буй төслүүд.</span><span class="en">Completed and ongoing projects with Mongolia's leading developers.</span></p>
+    <p><span class="mn">Монголын тэргүүлэх барилгын компаниудтай хамтран гүйцэтгэсэн болон гүйцэтгэж буй төслүүд. Төсөл дээр дарж албан ёсны Facebook хуудсаар зочилно уу.</span><span class="en">Completed and ongoing projects with Mongolia's leading developers. Click any project to visit its official Facebook page.</span></p>
   </div>
-  <div class="plist">
-    <div class="prow rv"><span class="n">01</span><h3><span class="mn">Хүслийн төгөл хотхон</span><span class="en">Khusliin Tugul Town</span></h3><span class="cl"><span class="mn">Монгол Угсаа Констракшн ХХК</span><span class="en">Mongol Ugsaa Construction LLC</span></span></div>
-    <div class="prow rv"><span class="n">02</span><h3><span class="mn">Нэхмэл дахин төлөвлөлт</span><span class="en">Nekhmel Redevelopment</span></h3><span class="cl"><span class="mn">Азиан Сити ХХК</span><span class="en">Asian City LLC</span></span></div>
-    <div class="prow rv"><span class="n">03</span><h3><span class="mn">Улаанбаатар их дэлгүүр өргөтгөл — 18 давхар үйлчилгээтэй орон сууц</span><span class="en">Ulaanbaatar Department Store extension — 18-storey mixed-use residence</span></h3><span class="cl"><span class="mn">Орон сууц · Үйлчилгээ</span><span class="en">Residential · Retail</span></span></div>
-    <div class="prow rv"><span class="n">04</span><h3><span class="mn">Хаппи Резидэнс</span><span class="en">Happy Residence</span></h3><span class="cl"><span class="mn">Нутгийн Буян Групп ХХК</span><span class="en">Nutgiin Buyan Group LLC</span></span></div>
-    <div class="prow rv"><span class="n">05</span><h3><span class="mn">Очир Сити</span><span class="en">Ochir City</span></h3><span class="cl"><span class="mn">Нутгийн Буян Групп ХХК</span><span class="en">Nutgiin Buyan Group LLC</span></span></div>
+  <div class="pgrid">
+    <a class="pcard rv" href="https://www.facebook.com/share/1EdCbseKLP/?mibextid=wwXIfr" target="_blank" rel="noopener">
+      <div class="pcard-media">
+        <img class="pbg" src="assets/img/projects/p1_cover.jpg" alt="Хүслийн төгөл хотхон" loading="lazy">
+        <span class="pcard-num">01</span>
+        <div class="pcard-logo"><img src="assets/img/projects/p1_logo.jpg" alt="Хүслийн төгөл лого" loading="lazy"></div>
+        <span class="pcard-fb-badge"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h2V2h-3c-3 0-4 2-4 4v2H8v3h2v11h4V11h3l.5-3z"/></svg><span>Facebook →</span></span>
+      </div>
+      <div class="pcard-bd">
+        <span class="pcard-cl"><span class="mn">Монгол Угсаа Констракшн ХХК</span><span class="en">Mongol Ugsaa Construction LLC</span></span>
+        <h3><span class="mn">Хүслийн төгөл хотхон</span><span class="en">Khusliin Tugul Town</span></h3>
+      </div>
+    </a>
+    <a class="pcard rv" href="https://www.facebook.com/share/1d3TdkL6Ni/?mibextid=wwXIfr" target="_blank" rel="noopener">
+      <div class="pcard-media">
+        <img class="pbg" src="assets/img/projects/p2_cover.jpg" alt="IVY Residence — Нэхмэл дахин төлөвлөлт" loading="lazy">
+        <span class="pcard-num">02</span>
+        <div class="pcard-logo"><img src="assets/img/projects/p2_logo.jpg" alt="IVY Residence лого" loading="lazy"></div>
+        <span class="pcard-fb-badge"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h2V2h-3c-3 0-4 2-4 4v2H8v3h2v11h4V11h3l.5-3z"/></svg><span>Facebook →</span></span>
+      </div>
+      <div class="pcard-bd">
+        <span class="pcard-cl"><span class="mn">Азиан Сити ХХК</span><span class="en">Asian City LLC</span></span>
+        <h3><span class="mn">Нэхмэл дахин төлөвлөлт — IVY Residence</span><span class="en">Nekhmel Redevelopment — IVY Residence</span></h3>
+      </div>
+    </a>
+    <a class="pcard rv" href="https://www.facebook.com/share/1NThzq7M1x/?mibextid=wwXIfr" target="_blank" rel="noopener">
+      <div class="pcard-media">
+        <img class="pbg" src="assets/img/projects/p3_cover.jpg" alt="Century Business Apartment — Улаанбаатар их дэлгүүр өргөтгөл" loading="lazy">
+        <span class="pcard-num">03</span>
+        <div class="pcard-logo"><img src="assets/img/projects/p3_logo.jpg" alt="Century Business Apartment лого" loading="lazy"></div>
+        <span class="pcard-fb-badge"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h2V2h-3c-3 0-4 2-4 4v2H8v3h2v11h4V11h3l.5-3z"/></svg><span>Facebook →</span></span>
+      </div>
+      <div class="pcard-bd">
+        <span class="pcard-cl"><span class="mn">18 давхар үйлчилгээтэй орон сууц</span><span class="en">18-storey mixed-use residence</span></span>
+        <h3><span class="mn">Улаанбаатар их дэлгүүр өргөтгөл — Century Business Apartment</span><span class="en">UB Department Store Extension — Century Business Apartment</span></h3>
+      </div>
+    </a>
+    <a class="pcard rv" href="https://www.facebook.com/share/1CiktJTDtt/?mibextid=wwXIfr" target="_blank" rel="noopener">
+      <div class="pcard-media">
+        <img class="pbg" src="assets/img/projects/p4_cover.jpg" alt="Хаппи Резидэнс хотхон" loading="lazy">
+        <span class="pcard-num">04</span>
+        <div class="pcard-logo"><img src="assets/img/projects/p4_logo.jpg" alt="Happy Residence лого" loading="lazy"></div>
+        <span class="pcard-fb-badge"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h2V2h-3c-3 0-4 2-4 4v2H8v3h2v11h4V11h3l.5-3z"/></svg><span>Facebook →</span></span>
+      </div>
+      <div class="pcard-bd">
+        <span class="pcard-cl"><span class="mn">Нутгийн Буян Групп ХХК</span><span class="en">Nutgiin Buyan Group LLC</span></span>
+        <h3><span class="mn">Хаппи Резидэнс хотхон</span><span class="en">Happy Residence</span></h3>
+      </div>
+    </a>
+    <a class="pcard rv" href="https://www.facebook.com/share/1D9iwyomnZ/?mibextid=wwXIfr" target="_blank" rel="noopener">
+      <div class="pcard-media">
+        <img class="pbg" src="assets/img/projects/p5_cover.jpg" alt="Очир Сити хотхон" loading="lazy">
+        <span class="pcard-num">05</span>
+        <div class="pcard-logo"><img src="assets/img/projects/p5_logo.jpg" alt="Очир Сити лого" loading="lazy"></div>
+        <span class="pcard-fb-badge"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h2V2h-3c-3 0-4 2-4 4v2H8v3h2v11h4V11h3l.5-3z"/></svg><span>Facebook →</span></span>
+      </div>
+      <div class="pcard-bd">
+        <span class="pcard-cl"><span class="mn">Нутгийн Буян Групп ХХК</span><span class="en">Nutgiin Buyan Group LLC</span></span>
+        <h3><span class="mn">Очир Сити хотхон</span><span class="en">Ochir City</span></h3>
+      </div>
+    </a>
   </div>
 </div></section>
 
@@ -917,7 +983,7 @@ addEventListener('load',()=>setTimeout(go,RM?0:1300));setTimeout(go,3000);
 
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);
   const c=e.target.querySelector('[data-count]');if(c)count(c)}}),{threshold:0,rootMargin:'0px 0px -8% 0px'});
-$$('.rv').forEach(el=>{const p=el.parentElement;if(/vals|bfs|ctiles|fl|sub2/.test(p.className)||p.id=='fl')el.style.transitionDelay=([...p.children].indexOf(el)%3)*.12+'s';io.observe(el)});
+$$('.rv').forEach(el=>{const p=el.parentElement;if(/vals|bfs|ctiles|fl|sub2|pgrid/.test(p.className)||p.id=='fl')el.style.transitionDelay=([...p.children].indexOf(el)%3)*.12+'s';io.observe(el)});
 function count(el){const t=+el.dataset.count;let s=null;const f=ts=>{s=s||ts;const p=Math.min((ts-s)/1400,1);el.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)}
 
 const steps=$$('.step');
