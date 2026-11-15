@@ -37,7 +37,7 @@ const html=`
         <div class="mm-side">${col('floor')}${col('more')}</div>
         <a class="mm-feat" href="catalog.html"><small>${L('Бүрэн каталог','Full catalogue')}</small><b>${L('1,700+ бүтээгдэхүүн','1,700+ products')}</b><span>${L('Зураг, бараа код, хэмжээтэй. Хайх, шүүх, жагсаалт үүсгэх.','Photos, codes and sizes. Search, filter and build a quote list.')}</span><i>${L('Каталог нээх →','Open catalogue →')}</i></a>
       </div></div></li>
-    <li><a class="sn-a" href="${HOME}#brands">${L('Брэндүүд','Brands')}</a></li>
+    <li><a class="sn-a" href="${HOME}#brands">${L('Брендүүд','Brands')}</a></li>
     <li><a class="sn-a" href="${HOME}#projects">${L('Төслүүд','Projects')}</a></li>
     <li><a class="sn-a" href="${HOME}#services">${L('Үйлчилгээ','Services')}</a></li>
     <li><a class="sn-a" href="${HOME}#about">${L('Бидний тухай','About')}</a></li>
@@ -55,7 +55,7 @@ const html=`
     <a class="mn-all" href="catalog.html">${L('Бүрэн каталог','Full catalogue')} →</a>
     ${['bath','floor','more'].map(k=>`<h6>${L(...MENU[k].t)}</h6>`+MENU[k].items.map(i=>`<a href="${href(i[0])}">${L(i[1],i[2])}</a>`).join('')).join('')}
   </details>
-  <a class="mn-top" href="${HOME}#brands">${L('Брэндүүд','Brands')}</a>
+  <a class="mn-top" href="${HOME}#brands">${L('Брендүүд','Brands')}</a>
   <a class="mn-top" href="${HOME}#projects">${L('Төслүүд','Projects')}</a>
   <a class="mn-top" href="${HOME}#services">${L('Үйлчилгээ','Services')}</a>
   <a class="mn-top" href="${HOME}#about">${L('Бидний тухай','About')}</a>
