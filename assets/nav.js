@@ -62,9 +62,10 @@ const html=`
   <a class="mn-top" href="csr.html">${L('Нийгмийн хариуцлага','Social responsibility')}</a>
   <a class="mn-top" href="${HOME}#contact">${L('Холбоо барих','Contact')}</a>
   <a class="btn solid" href="${HOME}#contact" style="margin-top:20px;align-self:flex-start">${L('Үнийн санал авах','Request a quote')} →</a>
-</div></div>`;
+</div></div>
+<div class="nav-veil" id="navVeil"></div>`;
 document.currentScript.insertAdjacentHTML('beforebegin',html);
-const nav=document.getElementById('nav'),mm=nav.querySelector('.has-mm'),btn=mm.querySelector('button');
+const nav=document.getElementById('nav'),mm=nav.querySelector('.has-mm'),btn=mm.querySelector('button'),veil=document.getElementById('navVeil');
 let t;const open=o=>{mm.classList.toggle('open',o);btn.setAttribute('aria-expanded',o)};
 mm.addEventListener('mouseenter',()=>{clearTimeout(t);open(true)});mm.addEventListener('mouseleave',()=>{t=setTimeout(()=>open(false),180)});
 btn.addEventListener('click',()=>open(!mm.classList.contains('open')));
@@ -75,6 +76,48 @@ document.getElementById('burger').addEventListener('click',()=>{const o=!mnav.cl
 mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mnav.classList.remove('open');document.body.classList.remove('mnav-open')}));
 const solid=()=>nav.classList.toggle('solid',scrollY>40||document.body.dataset.page==='catalog');
 addEventListener('scroll',solid,{passive:true});solid();
+
+// Instant veil section transition (no up/down page scrolling, works on 1st click)
+window.goToSection=function(id,noVeil){
+  const el=id==='home'?document.body:document.getElementById(id);
+  if(!el)return false;
+  open(false);
+  mnav.classList.remove('open');
+  document.body.classList.remove('mnav-open');
+  const jump=()=>{
+    el.querySelectorAll?.('.rv').forEach(r=>r.classList.add('in'));
+    if(el.classList?.contains('rv'))el.classList.add('in');
+    const calcY=()=>id==='home'?0:Math.max(0,el.getBoundingClientRect().top+window.scrollY-(id==='projects'?0:68));
+    window.scrollTo(0,calcY());
+    requestAnimationFrame(()=>{
+      window.scrollTo(0,calcY());
+      solid();
+      nav.querySelectorAll('.sn-links a').forEach(a=>a.classList.toggle('cur',a.getAttribute('href')==='#'+id));
+    });
+    if(location.hash)history.replaceState(null,'',location.pathname+location.search);
+  };
+  if(noVeil){jump();return true;}
+  veil.classList.add('on');
+  setTimeout(()=>{
+    jump();
+    setTimeout(()=>veil.classList.remove('on'),90);
+  },180);
+  return true;
+};
+
+if(!HOME){
+  document.addEventListener('click',e=>{
+    const a=e.target.closest('a[href^="#"]');
+    if(!a)return;
+    const id=a.getAttribute('href').slice(1);
+    if(!id)return;
+    if(id==='home'||document.getElementById(id)){
+      e.preventDefault();
+      window.goToSection(id,false);
+    }
+  });
+}
+
 // highlight current section
 const ids=['brands','projects','services','about'];
 if(!HOME){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){nav.querySelectorAll('.sn-links a').forEach(a=>a.classList.toggle('cur',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});

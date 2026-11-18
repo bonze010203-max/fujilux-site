@@ -7,6 +7,18 @@
 <meta name="theme-color" content="#0d1c15">
 <title>Fujilux Supply — Premium Supply</title>
 <meta name="description" content="Дэлхийн тансаг зэрэглэлийн барилгын материал, тоног төхөөрөмжийг Монголын төслүүдэд нийлүүлнэ.">
+<script>
+if('scrollRestoration' in history)history.scrollRestoration='manual';
+(function(){
+  var navEntry=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];
+  var isReload=(navEntry&&navEntry.type==='reload')||(performance.navigation&&performance.navigation.type===1);
+  window.__INIT_HASH=(!isReload&&location.hash)?location.hash.slice(1):'';
+  if(location.hash)history.replaceState(null,'',location.pathname+location.search);
+  window.scrollTo(0,0);
+})();
+</script>
+<link rel="preload" as="image" href="assets/img/s_still.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="assets/logo-dark.png" fetchpriority="high">
 <link rel="stylesheet" href="assets/fonts.css?v=4">
 <style>
 :root{
@@ -17,7 +29,6 @@
   --ease:cubic-bezier(.2,.7,.1,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 .dark{--bg:#0d1c15;--bg2:#0b1812;--panel:#12271d;--line:rgba(242,185,82,.2);--gold:#e2a845;--gold2:#f2c46d;--gold3:#a86f1f;--ink:#f7f2e7;--mute:#cfd6d0;--dim:#a3aea6;background-color:var(--bg);color:var(--ink)}
@@ -37,10 +48,10 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;op
 /* progress */
 .progress{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,#a86f1f,#f2b952);z-index:60}
 /* loader */
-.loader{position:fixed;inset:0;background:var(--bg);z-index:90;display:grid;place-items:center;transition:opacity .8s var(--ease),visibility .8s}
-.loader.done{opacity:0;visibility:hidden}
+.loader{position:fixed;inset:0;background:var(--bg);z-index:90;display:grid;place-items:center;transition:opacity .45s var(--ease),visibility .45s}
+.loader.done{opacity:0;visibility:hidden;pointer-events:none}
 .lsheen{width:min(320px,62vw);aspect-ratio:720/415;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat;
-  background:linear-gradient(100deg,#a86f1f 0%,#f2b952 35%,#fff3d1 50%,#f2b952 65%,#a86f1f 100%);background-size:300% 100%;animation:lsh 1.6s var(--ease) forwards,lin 1s var(--ease) both}
+  background:linear-gradient(100deg,#a86f1f 0%,#f2b952 35%,#fff3d1 50%,#f2b952 65%,#a86f1f 100%);background-size:300% 100%;animation:lsh .85s var(--ease) forwards,lin .5s var(--ease) both}
 @keyframes lsh{from{background-position:100% 0}to{background-position:0 0}}
 @keyframes lin{from{opacity:0;transform:scale(.92);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
 .sheen{-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat;background:linear-gradient(100deg,#a86f1f 0%,#f2b952 30%,#fff3d1 45%,#f2b952 60%,#a86f1f 100%);background-size:300% 100%;animation:sh2 7s linear infinite}
@@ -450,7 +461,7 @@ nav.solid .lgo.l{display:block}
 @media(min-width:620px){.show{columns:2}}
 @media(min-width:1000px){.show{columns:3}}
 .sc{break-inside:avoid;margin-bottom:16px;position:relative;border-radius:6px;overflow:hidden;cursor:zoom-in;background:#12271d}
-.sc img{width:100%;display:block;transition:transform 1.4s var(--ease),filter .6s}
+.sc img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform 1.4s var(--ease),filter .6s}
 .sc:hover img{transform:scale(1.06)}
 .sc .cap{position:absolute;inset:auto 0 0 0;padding:40px 18px 16px;background:linear-gradient(180deg,transparent,rgba(13,28,21,.9));color:#f7f2e7;transform:translateY(30%);opacity:.0;transition:all .6s var(--ease)}
 .sc:hover .cap,.sc:focus .cap{transform:none;opacity:1}
@@ -586,18 +597,18 @@ h1,h2,h3,h4,.quote,.stat b,.wm,.adv b{font-family:var(--serif)}
 .cat2 .ctile .bg img{object-position:center}
 .hero .ctas .btn:not(.solid){color:#f7f2e7}
 </style>
-<link rel="stylesheet" href="assets/nav.css?v=8">
+<link rel="stylesheet" href="assets/nav.css?v=9">
 </head>
 <body>
 <div class="loader dark hex" id="loader"><div class="lsheen"></div></div>
 <div class="progress" id="prog"></div>
 <div class="glow" id="glow"></div>
 
-<script src="assets/nav.js?v=7"></script>
+<script src="assets/nav.js?v=8"></script>
 
 <!-- HERO -->
 <header class="hero dark" id="home">
-  <div class="slides" id="slides"><img data-img="s_still" alt="" class="on"><img data-img="s_city" alt=""><img data-img="s_brazn" alt=""><img data-img="s_veil" alt=""></div>
+  <div class="slides" id="slides"><img src="assets/img/s_still.jpg" data-img="s_still" fetchpriority="high" decoding="async" alt="" class="on"><img data-img="s_city" decoding="async" alt=""><img data-img="s_brazn" decoding="async" alt=""><img data-img="s_veil" decoding="async" alt=""></div>
   <div class="hshade"></div>
   <div class="wrap">
     <div>
@@ -907,7 +918,7 @@ const IMG={"eseries": "assets/img/eseries.jpg", "freest": "assets/img/freest.jpg
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const L=(m,e)=>`<span class="mn">${m}</span><span class="en">${e}</span>`;
-$$('img[data-img]').forEach(i=>i.src=IMG[i.dataset.img]);
+$$('img[data-img]').forEach(i=>{i.decoding='async';if(!i.getAttribute('src'))i.src=IMG[i.dataset.img]});
 
 /* KOHLER showroom */
 const CATS={toilet:['Ухаалаг суултуур','Smart toilets'],basin:['Угаалтуур','Basins'],faucet:['Холигч','Faucets'],shower:['Шүршүүр','Showers'],bath:['Ванн','Baths'],furn:['Тавилга, толь','Furniture & mirrors'],kitchen:['Гал тогоо','Kitchen'],public:['Нийтийн барилга','Commercial']};
@@ -955,7 +966,7 @@ const K=[
  ['urinal','public','Urinals','Мэдрэгчтэй шээлтүүр.','Sensor-operated urinals.']
 ];
 $('#bf').innerHTML=`<button class="on" data-c="all">${L('Бүгд','All')}</button>`+Object.entries(CATS).map(([k,v])=>`<button data-c="${k}">${L(v[0],v[1])}</button>`).join('');
-$('#show').innerHTML=K.map((k,i)=>`<div class="sc" tabindex="0" data-c="${k[1]}" data-i="${i}"><img src="${IMG[k[0]]}" alt="Kohler ${k[2]}" loading="lazy"><div class="cap"><small>${L(CATS[k[1]][0],CATS[k[1]][1])}</small><b>${k[2]}</b></div></div>`).join('');
+$('#show').innerHTML=K.map((k,i)=>`<div class="sc" tabindex="0" data-c="${k[1]}" data-i="${i}"><img src="${IMG[k[0]]}" alt="Kohler ${k[2]}" decoding="async" loading="${i<6?'eager':'lazy'}"><div class="cap"><small>${L(CATS[k[1]][0],CATS[k[1]][1])}</small><b>${k[2]}</b></div></div>`).join('');
 $$('#bf button').forEach(b=>b.onclick=()=>{$$('#bf button').forEach(x=>x.classList.toggle('on',x==b));const c=b.dataset.c;
   $$('.sc').forEach((s,i)=>{const show=c=='all'||s.dataset.c==c;s.classList.toggle('hide',!show);if(show&&!RM)s.animate([{opacity:0,transform:'translateY(30px)'},{opacity:1,transform:'none'}],{duration:700,delay:(i%6)*50,easing:'cubic-bezier(.2,.7,.1,1)',fill:'backwards'})})});
 let cur=0;
@@ -985,7 +996,7 @@ const F=[
  {g:'p3',n:'V665',code:'V665',size:'1218 × 199 × 12 mm',v:['V665a','V665b'],same:1}
 ];
 const lab=(f,c)=>f.same?f.code:c;
-$('#fl').innerHTML=F.map((f,i)=>`<div class="fc rv" data-g="${f.g}"><div class="main"><img src="${IMG[f.v[0]]}" alt="${f.n}" loading="lazy"><span class="code">${lab(f,f.v[0])}</span></div><div class="bd"><div class="grp">${G[f.g]}</div><h4>${L(f.n+' цуврал',f.n+' series')}</h4><dl>${f.type?`<dt>${L('Төрөл','Type')}</dt><dd>${f.type}</dd>`:''}<dt>${L('Код','Codes')}</dt><dd>${f.code}</dd>${f.size?`<dt>${L('Хэмжээ','Size')}</dt><dd>${f.size}</dd>`:''}</dl><div class="vars">${f.v.map((c,j)=>`<button class="${j?'':'on'}" data-f="${i}" data-c="${c}" title="${lab(f,c)}" aria-label="${lab(f,c)}"><img src="${IMG[c]}" alt=""></button>`).join('')}</div></div></div>`).join('');
+$('#fl').innerHTML=F.map((f,i)=>`<div class="fc rv" data-g="${f.g}"><div class="main"><img src="${IMG[f.v[0]]}" alt="${f.n}" decoding="async"><span class="code">${lab(f,f.v[0])}</span></div><div class="bd"><div class="grp">${G[f.g]}</div><h4>${L(f.n+' цуврал',f.n+' series')}</h4><dl>${f.type?`<dt>${L('Төрөл','Type')}</dt><dd>${f.type}</dd>`:''}<dt>${L('Код','Codes')}</dt><dd>${f.code}</dd>${f.size?`<dt>${L('Хэмжээ','Size')}</dt><dd>${f.size}</dd>`:''}</dl><div class="vars">${f.v.map((c,j)=>`<button class="${j?'':'on'}" data-f="${i}" data-c="${c}" title="${lab(f,c)}" aria-label="${lab(f,c)}"><img src="${IMG[c]}" alt="" decoding="async" loading="lazy"></button>`).join('')}</div></div></div>`).join('');
 $$('.vars button').forEach(b=>b.onclick=()=>{const card=b.closest('.fc'),f=F[b.dataset.f],img=card.querySelector('.main img');
   card.querySelectorAll('.vars button').forEach(x=>x.classList.toggle('on',x==b));img.style.opacity=0;
   setTimeout(()=>{img.src=IMG[b.dataset.c];img.style.opacity=1;card.querySelector('.code').textContent=lab(f,b.dataset.c)},250)});
@@ -1014,8 +1025,52 @@ $$('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
 try{const s=localStorage.getItem('fl-lang');if(s)setLang(s)}catch(e){}
 
 
-function go(){$('#loader').classList.add('done');$('.hero').classList.add('in');startSlides()}
-addEventListener('load',()=>setTimeout(go,RM?0:1300));setTimeout(go,3000);
+let booted=false;
+function startWarmPreload(){
+  if(window.__RAM_CACHE)return;
+  window.__RAM_CACHE=[];
+  const q=[
+    IMG.s_city,IMG.s_brazn,IMG.s_veil,
+    'assets/img/projects/p1_cover.jpg','assets/img/projects/p2_cover.jpg','assets/img/projects/p3_cover.jpg','assets/img/projects/p4_cover.jpg','assets/img/projects/p5_cover.jpg',
+    'assets/img/projects/p1_logo.jpg','assets/img/projects/p2_logo.jpg','assets/img/projects/p3_logo.jpg','assets/img/projects/p4_logo.jpg','assets/img/projects/p5_logo.jpg',
+    ...F.map(f=>IMG[f.v[0]]),
+    ...K.map(k=>IMG[k[0]]),
+    ...Object.values(IMG)
+  ];
+  const seen=new Set();
+  const urls=q.filter(u=>u&&!seen.has(u)&&seen.add(u));
+  let idx=0;
+  const maxConc=innerWidth<768?2:4;
+  function next(){
+    if(idx>=urls.length)return;
+    const u=urls[idx++];
+    const im=new Image();
+    im.decoding='async';
+    im.onload=im.onerror=()=>{if(im.decode)im.decode().catch(()=>{});next()};
+    im.src=u;
+    window.__RAM_CACHE.push(im);
+  }
+  for(let k=0;k<maxConc;k++)next();
+  const idle=window.requestIdleCallback||((fn)=>setTimeout(fn,1200));
+  idle(()=>{
+    ['assets/products.js?v=2','catalog.html','csr.html'].forEach(href=>{
+      const l=document.createElement('link');l.rel='prefetch';l.href=href;document.head.appendChild(l);
+    });
+  });
+}
+function go(){
+  if(booted)return;
+  booted=true;
+  $('#loader').classList.add('done');
+  $('.hero').classList.add('in');
+  startSlides();
+  startWarmPreload();
+}
+const heroFirst=$('#slides img.on');
+if(heroFirst&&heroFirst.complete)setTimeout(go,RM?0:220);
+else if(heroFirst)heroFirst.addEventListener('load',()=>setTimeout(go,RM?0:220),{once:true});
+addEventListener('DOMContentLoaded',()=>setTimeout(go,RM?0:380));
+setTimeout(go,900);
 
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);
   const c=e.target.querySelector('[data-count]');if(c)count(c)}}),{threshold:0,rootMargin:'0px 0px -8% 0px'});
@@ -1079,7 +1134,20 @@ function startProjSlides(){if(RM)return;clearInterval(pst);pst=setInterval(()=>s
 ptabs.forEach((b,i)=>b.onclick=()=>{showProj(i);startProjSlides()});
 pdots.forEach((d,i)=>d.onclick=()=>{showProj(i);startProjSlides()});
 startProjSlides();
-(()=>{const q=new URLSearchParams(location.search).get('q');if(q){$('#msg').value=q;const s=$('#sv');s.selectedIndex=/Fujilux/.test(q)?2:1;setTimeout(()=>$('#contact').scrollIntoView(),300)}})();
+(()=>{
+  const q=new URLSearchParams(location.search).get('q');
+  if(q){
+    $('#msg').value=q;
+    const s=$('#sv');
+    s.selectedIndex=/Fujilux/.test(q)?2:1;
+    setTimeout(()=>window.goToSection?window.goToSection('contact',true):$('#contact').scrollIntoView(),120);
+  } else if(window.__INIT_HASH){
+    setTimeout(()=>window.goToSection&&window.goToSection(window.__INIT_HASH,true),60);
+  } else {
+    window.scrollTo(0,0);
+  }
+})();
+addEventListener('pageshow',e=>{if(!location.search.includes('q=')&&!window.__INIT_HASH)window.scrollTo(0,0)});
 function send(e){e.preventDefault();$('#sent').style.display='block';e.target.querySelectorAll('input,textarea').forEach(i=>i.value='');return false}
 </script>
 </body>
