@@ -86,6 +86,7 @@ window.goToSection=function(id,noVeil){
   document.body.classList.remove('mnav-open');
   const jump=()=>{
     el.querySelectorAll?.('.rv').forEach(r=>r.classList.add('in'));
+    el.querySelectorAll?.('img[loading="lazy"]').forEach(im=>im.loading='eager');
     if(el.classList?.contains('rv'))el.classList.add('in');
     const calcY=()=>id==='home'?0:Math.max(0,el.getBoundingClientRect().top+window.scrollY-(id==='projects'?0:68));
     window.scrollTo(0,calcY());
