@@ -402,9 +402,7 @@ nav.solid .lgo.l{display:block}
 .ptab-logo img{width:100%;height:100%;object-fit:cover;display:block}
 .proj-body{position:relative;z-index:2;margin:auto 0;padding:30px 0}
 .proj-body .wrap>div:first-child{max-width:860px}
-.proj-pill{display:inline-flex;align-items:center;gap:12px;padding:7px 18px 7px 8px;border-radius:40px;font-size:12px;letter-spacing:.08em;color:#ffe2a3;background:rgba(13,28,21,.62);backdrop-filter:blur(8px);border:1px solid rgba(242,185,82,.65);transition:transform .3s,box-shadow .3s}
-.proj-pill:hover{transform:translateY(-2px);box-shadow:0 0 26px -4px rgba(242,185,82,.45)}
-.proj-pill img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:1.5px solid #f2b952;background:#fff}
+.proj-dev{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#f2c46d;font-weight:400}
 .proj-hero h2.ph-title{font-family:var(--serif);font-weight:200;font-size:clamp(40px,5.6vw,92px);line-height:1.04;letter-spacing:-.025em;margin:22px 0 24px;color:#f7f2e7;max-width:none;min-height:2.08em}
 .proj-hero h2.ph-title .ln{display:block}
 .proj-hero h2.ph-title em{font-style:normal!important;font-weight:300;color:transparent;background:linear-gradient(100deg,var(--gold3),var(--gold2) 40%,var(--gold) 60%,var(--gold3));background-size:220% 100%;-webkit-background-clip:text;background-clip:text;animation:sheen 6s linear infinite}
@@ -748,11 +746,7 @@ h1,h2,h3,h4,.quote,.stat b,.wm,.adv b{font-family:var(--serif)}
   <div class="proj-body">
     <div class="wrap">
       <div class="proj-content" id="pcontent">
-        <a href="https://www.facebook.com/share/1EdCbseKLP/?mibextid=wwXIfr" target="_blank" rel="noopener" class="proj-pill" id="ppill">
-          <img id="plogo" src="assets/img/projects/p1_logo.jpg" alt="">
-          <span id="pdev"><span class="mn">Монгол Угсаа Констракшн ХХК · Албан ёсны түнш</span><span class="en">Mongol Ugsaa Construction LLC · Official Partner</span></span>
-          <span class="ar">→</span>
-        </a>
+        <div class="proj-dev" id="pdev"><span class="mn">Монгол Угсаа Констракшн ХХК · Албан ёсны түнш</span><span class="en">Mongol Ugsaa Construction LLC · Official Partner</span></div>
         <h2 class="ph-title" id="ptitle">
           <span class="ln"><span class="mn">Хүслийн төгөл</span><span class="en">Khusliin Tugul</span></span>
           <span class="ln"><span><em class="mn">хотхон.</em><em class="en">Town.</em></span></span>
@@ -1104,8 +1098,6 @@ function showProj(n){
   const pr=PROJS[psi];
   pcontent.classList.add('swapping');
   setTimeout(()=>{
-    $('#plogo').src=pr.logo;
-    $('#ppill').href=pr.fb;
     $('#pfb').href=pr.fb;
     $('#pdev').innerHTML=L(pr.dev[0],pr.dev[1]);
     $('#ptitle').innerHTML=`<span class="ln">${L(pr.l1[0],pr.l1[1])}</span><span class="ln"><span><em class="mn">${pr.l2[0]}</em><em class="en">${pr.l2[1]}</em></span></span>`;
